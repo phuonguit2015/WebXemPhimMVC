@@ -1,0 +1,109 @@
+﻿@model PagedList.IPagedList<WebXemPhim.Models.Phim>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <h2>DANH SÁCH PHIM <span>@Html.ActionLink("Thêm Mới", "Create", "", new { @class = "btn-warning btn-create-title" })</span>  </h2>
+
+</div>
+
+@using (Html.BeginForm("Index", "Phim", FormMethod.Get))
+{
+    <div class="col-md-4 input-group input-group-sm search-frm">
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <span class="input-group-btn">
+            <input type="submit" value="Tìm Kiếm" class="btn btn-info btn-flat" />
+        </span>
+    </div>
+}
+<hr>
+
+<div class="table-content">
+    <table class="table" id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Poster)
+                </th>
+                <th>
+                    @Html.ActionLink("Tên Phim", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().LoaiPhim.TenLoaiPhim)
+                </th>                
+                <th>
+                    @Html.DisplayNameFor(model => model.First().DaoDien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().DienVien)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().NoiDung)
+                </th>                
+                <th>
+                    @Html.DisplayNameFor(model => model.First().ThoiLuong)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().TrailerURL)
+                </th>             
+                <th>
+                    @Html.DisplayNameFor(model => model.First().NgayChieu)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+      
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Poster)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenPhim)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LoaiPhim.TenLoaiPhim)
+                    </td>                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DaoDien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DienVien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoiDung)
+                    </td>                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ThoiLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrailerURL)
+                    </td>                 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayChieu)
+                    </td>
+                    <td>
+                        <i class="fa fa-pencil"></i> @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.PhimID }) |
+                        <i class="fa fa-trash-o"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.PhimID }) |
+                        <i class="fa fa-info"></i> @Html.ActionLink("Chi Tiết", "Details", new { id = item.PhimID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br />
+<div class="page-number">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trong @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>

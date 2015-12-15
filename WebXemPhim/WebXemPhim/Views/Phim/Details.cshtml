@@ -1,0 +1,108 @@
+﻿@model WebXemPhim.Models.Phim
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<div class="container">
+    <h2>CHI TIẾT LOẠI PHIM</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiPhim.TenLoaiPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiPhim.TenLoaiPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DaoDien)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DaoDien)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DienVien)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DienVien)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoiDung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoiDung)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Poster)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Poster)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ThoiLuong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThoiLuong)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrailerURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrailerURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrangThai)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayChieu)
+            </dd>
+
+        </dl>
+    </div>
+    <hr />
+    <div class="form-actions no-color">
+        <hr />
+        <span class="btn btn-default">
+            @Html.ActionLink("Trở Về", "Index")
+        </span>
+        |
+        <span class="btn btn-primary">
+            @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.PhimID })
+        </span>
+
+    </div>
+</div>
+   

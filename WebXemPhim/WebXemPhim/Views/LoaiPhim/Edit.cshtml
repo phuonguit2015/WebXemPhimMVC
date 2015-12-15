@@ -1,0 +1,38 @@
+﻿@model WebXemPhim.Models.LoaiPhim
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<h2>CẬP NHẬT LOẠI PHIM</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.LoaiPhimID)
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Loại Phim: </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenLoaiPhim, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenLoaiPhim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cập Nhật" class="btn-themmoi btn btn-primary" />
+                <span class="btn btn-default" style="color:#fff">@Html.ActionLink("Trở Về", "Index")</span>
+
+            </div>
+        </div>
+    </div>
+}
+
+

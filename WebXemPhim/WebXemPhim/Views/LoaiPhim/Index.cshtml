@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<WebXemPhim.Models.LoaiPhim>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<div class="row">
+    <h2>DANH SÁCH LOẠI PHIM <span>@Html.ActionLink("Thêm Mới", "Create", "", new { @class = "btn-warning btn-create-title" })</span>  </h2>
+  
+</div>
+
+@using (Html.BeginForm("Index", "LoaiPhim", FormMethod.Get))
+{
+    <div class="col-md-4 input-group input-group-sm search-frm">
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <span class="input-group-btn">
+            <input type="submit" value="Tìm Kiếm" class="btn btn-info btn-flat" />
+        </span>
+    </div>
+}
+<hr>
+
+<div class="table-content">
+    <table class="table" id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Tên Loại Phim", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    Hành Động
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="lalign">
+                        @Html.DisplayFor(modelItem => item.TenLoaiPhim)
+                    </td>
+                    <td>
+                        <i class="fa fa-pencil"></i> @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.LoaiPhimID }) |                         
+                        <i class="fa fa-trash-o"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.LoaiPhimID }) | 
+                         <i class="fa fa-info"></i> @Html.ActionLink("Chi Tiết", "Details", new { id = item.LoaiPhimID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div> 
+<br />
+<div class="page-number">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trong @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+

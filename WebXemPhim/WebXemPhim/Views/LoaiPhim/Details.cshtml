@@ -1,0 +1,39 @@
+﻿@model WebXemPhim.Models.LoaiPhim
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>CHI TIẾT LOẠI PHIM</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Loại Phim:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenLoaiPhim)
+            </dd>
+
+        </dl>
+    </div>
+    <hr />
+    <div class="form-actions no-color">
+        <hr />
+        <span class="btn btn-default">
+            @Html.ActionLink("Trở Về", "Index")
+        </span>
+        |
+        <span class="btn btn-primary">
+            @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.LoaiPhimID })
+        </span>
+
+    </div>
+   
+
+</div>

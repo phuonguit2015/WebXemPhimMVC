@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DAT_VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Ghe" Type="int" />
+    <Property Name="Id_LichChieu" Type="int" />
+  </EntityType>
+  <EntityType Name="GHE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoGhe" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LICH_CHIEU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Phim" Type="int" />
+    <Property Name="Id_PhongChieu" Type="int" />
+    <Property Name="NgayGio" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LOAI_PHIM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiPhim" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LOAI_VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiVe" Type="nvarchar" MaxLength="50" />
+    <Property Name="GiaTri" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="PHIM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DaoDien" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienVien" Type="nvarchar(max)" />
+    <Property Name="Id_LoaiPhim" Type="int" />
+    <Property Name="NgayChieu" Type="datetime" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="Poster" Type="image" />
+    <Property Name="TenPhim" Type="nvarchar(max)" />
+    <Property Name="ThoiLuong" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrailerUrl" Type="nvarchar(max)" />
+    <Property Name="TrangThai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHONG_CHIEU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenPhongChieu" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoLuongGhe" Type="int" />
+    <Property Name="ThongTin" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_Ghe" Type="int" />
+    <Property Name="GiaVe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_LichChieu" Type="int" />
+    <Property Name="Id_LoaiVe" Type="int" />
+    <Property Name="NgayDatVe" Type="datetime" />
+    <Property Name="NgayThanhToan" Type="datetime" />
+    <Property Name="SoCMND" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrangThai" Type="int" />
+  </EntityType>
+  <Association Name="FK_DAT_VE_GHE">
+    <End Role="GHE" Type="Self.GHE" Multiplicity="0..1" />
+    <End Role="DAT_VE" Type="Self.DAT_VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GHE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DAT_VE">
+        <PropertyRef Name="Id_Ghe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DAT_VE_LICH_CHIEU">
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="0..1" />
+    <End Role="DAT_VE" Type="Self.DAT_VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LICH_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DAT_VE">
+        <PropertyRef Name="Id_LichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICH_CHIEU_PHIM">
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="0..1" />
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LICH_CHIEU">
+        <PropertyRef Name="Id_Phim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICH_CHIEU_PHONG_CHIEU">
+    <End Role="PHONG_CHIEU" Type="Self.PHONG_CHIEU" Multiplicity="0..1" />
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHONG_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LICH_CHIEU">
+        <PropertyRef Name="Id_PhongChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIM_LOAI_PHIM">
+    <End Role="LOAI_PHIM" Type="Self.LOAI_PHIM" Multiplicity="0..1" />
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_PHIM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PHIM">
+        <PropertyRef Name="Id_LoaiPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_GHE">
+    <End Role="GHE" Type="Self.GHE" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GHE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_Ghe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_LICH_CHIEU">
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LICH_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_LichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_LOAI_VE">
+    <End Role="LOAI_VE" Type="Self.LOAI_VE" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_VE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_LoaiVe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MovieDBModelStoreContainer">
+    <EntitySet Name="DAT_VE" EntityType="Self.DAT_VE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GHE" EntityType="Self.GHE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICH_CHIEU" EntityType="Self.LICH_CHIEU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_PHIM" EntityType="Self.LOAI_PHIM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_VE" EntityType="Self.LOAI_VE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHIM" EntityType="Self.PHIM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHONG_CHIEU" EntityType="Self.PHONG_CHIEU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VE" EntityType="Self.VE" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DAT_VE_GHE" Association="Self.FK_DAT_VE_GHE">
+      <End Role="GHE" EntitySet="GHE" />
+      <End Role="DAT_VE" EntitySet="DAT_VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DAT_VE_LICH_CHIEU" Association="Self.FK_DAT_VE_LICH_CHIEU">
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+      <End Role="DAT_VE" EntitySet="DAT_VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICH_CHIEU_PHIM" Association="Self.FK_LICH_CHIEU_PHIM">
+      <End Role="PHIM" EntitySet="PHIM" />
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICH_CHIEU_PHONG_CHIEU" Association="Self.FK_LICH_CHIEU_PHONG_CHIEU">
+      <End Role="PHONG_CHIEU" EntitySet="PHONG_CHIEU" />
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIM_LOAI_PHIM" Association="Self.FK_PHIM_LOAI_PHIM">
+      <End Role="LOAI_PHIM" EntitySet="LOAI_PHIM" />
+      <End Role="PHIM" EntitySet="PHIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_GHE" Association="Self.FK_VE_GHE">
+      <End Role="GHE" EntitySet="GHE" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_LICH_CHIEU" Association="Self.FK_VE_LICH_CHIEU">
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_LOAI_VE" Association="Self.FK_VE_LOAI_VE">
+      <End Role="LOAI_VE" EntitySet="LOAI_VE" />
+      <End Role="VE" EntitySet="VE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

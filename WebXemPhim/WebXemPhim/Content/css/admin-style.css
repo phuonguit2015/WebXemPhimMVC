@@ -1,0 +1,66 @@
+﻿body {
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row h2 {
+    
+}
+
+.btn-create-title { 
+    padding-top: .7em;  
+    padding: .3em;   
+    border-radius: 3px;
+    text-align: center;
+    font-size: medium;
+    margin-left: 1em;
+    color: #fff;
+   
+}
+
+
+.search-frm {
+    float: right;
+}
+
+.page-number {
+    text-align: center;
+}
+
+/**Css table**/
+.table-content {
+    margin-right: 15px;   
+    background-color:#fff;
+}
+
+#keywords {
+
+}    
+
+#keywords thead {      
+    background: #c9dff0; 
+    text-transform: uppercase;  
+}
+
+/**CSS Create**/
+.form-horizontal{
+    margin-right: 2em;
+}
+.btn-themmoi {
+    float: right;
+}
+.control-label {
+    text-align: center;
+}
+.dl-horizontal dt {
+    text-align:center;
+}
+.btn a {
+    color: #fff;
+}
+.btn-default a{
+    color: #333;
+}

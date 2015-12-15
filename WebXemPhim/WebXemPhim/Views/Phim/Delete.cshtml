@@ -1,0 +1,117 @@
+﻿@model WebXemPhim.Models.Phim
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>XÓA PHIM</h2>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-warning"></i> Cảnh báo!</h4>
+        Bạn có thực sự muốn xóa?
+    </div>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiPhim.TenLoaiPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiPhim.TenLoaiPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DaoDien)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DaoDien)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DienVien)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DienVien)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoiDung)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoiDung)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Poster)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Poster)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ThoiLuong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ThoiLuong)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrailerURL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrailerURL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TrangThai)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayChieu)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <hr />
+                <span class="btn btn-default">
+                    @Html.ActionLink("Trở Về", "Index")
+                </span>
+                |
+                <input type="submit" value="Delete" class="btn btn-info" />
+
+            </div>
+        }
+    </div>
+</div>

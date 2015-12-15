@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DAT_VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Ghe" Type="Int32" />
+    <Property Name="Id_LichChieu" Type="Int32" />
+    <NavigationProperty Name="GHE" Relationship="Self.FK_DAT_VE_GHE" FromRole="DAT_VE" ToRole="GHE" />
+    <NavigationProperty Name="LICH_CHIEU" Relationship="Self.FK_DAT_VE_LICH_CHIEU" FromRole="DAT_VE" ToRole="LICH_CHIEU" />
+  </EntityType>
+  <EntityType Name="GHE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoGhe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DAT_VE" Relationship="Self.FK_DAT_VE_GHE" FromRole="GHE" ToRole="DAT_VE" />
+    <NavigationProperty Name="VEs" Relationship="Self.FK_VE_GHE" FromRole="GHE" ToRole="VE" />
+  </EntityType>
+  <EntityType Name="LICH_CHIEU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Phim" Type="Int32" />
+    <Property Name="Id_PhongChieu" Type="Int32" />
+    <Property Name="NgayGio" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DAT_VE" Relationship="Self.FK_DAT_VE_LICH_CHIEU" FromRole="LICH_CHIEU" ToRole="DAT_VE" />
+    <NavigationProperty Name="PHIM" Relationship="Self.FK_LICH_CHIEU_PHIM" FromRole="LICH_CHIEU" ToRole="PHIM" />
+    <NavigationProperty Name="PHONG_CHIEU" Relationship="Self.FK_LICH_CHIEU_PHONG_CHIEU" FromRole="LICH_CHIEU" ToRole="PHONG_CHIEU" />
+    <NavigationProperty Name="VEs" Relationship="Self.FK_VE_LICH_CHIEU" FromRole="LICH_CHIEU" ToRole="VE" />
+  </EntityType>
+  <EntityType Name="LOAI_PHIM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHIMs" Relationship="Self.FK_PHIM_LOAI_PHIM" FromRole="LOAI_PHIM" ToRole="PHIM" />
+  </EntityType>
+  <EntityType Name="LOAI_VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiVe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaTri" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="VEs" Relationship="Self.FK_VE_LOAI_VE" FromRole="LOAI_VE" ToRole="VE" />
+  </EntityType>
+  <EntityType Name="PHIM">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DaoDien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienVien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Id_LoaiPhim" Type="Int32" />
+    <Property Name="NgayChieu" Type="DateTime" Precision="3" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Poster" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TenPhim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiLuong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrailerUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LICH_CHIEU" Relationship="Self.FK_LICH_CHIEU_PHIM" FromRole="PHIM" ToRole="LICH_CHIEU" />
+    <NavigationProperty Name="LOAI_PHIM" Relationship="Self.FK_PHIM_LOAI_PHIM" FromRole="PHIM" ToRole="LOAI_PHIM" />
+  </EntityType>
+  <EntityType Name="PHONG_CHIEU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPhongChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongGhe" Type="Int32" />
+    <Property Name="ThongTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LICH_CHIEU" Relationship="Self.FK_LICH_CHIEU_PHONG_CHIEU" FromRole="PHONG_CHIEU" ToRole="LICH_CHIEU" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="VE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Ghe" Type="Int32" />
+    <Property Name="GiaVe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_LichChieu" Type="Int32" />
+    <Property Name="Id_LoaiVe" Type="Int32" />
+    <Property Name="NgayDatVe" Type="DateTime" Precision="3" />
+    <Property Name="NgayThanhToan" Type="DateTime" Precision="3" />
+    <Property Name="SoCMND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" />
+    <NavigationProperty Name="GHE" Relationship="Self.FK_VE_GHE" FromRole="VE" ToRole="GHE" />
+    <NavigationProperty Name="LICH_CHIEU" Relationship="Self.FK_VE_LICH_CHIEU" FromRole="VE" ToRole="LICH_CHIEU" />
+    <NavigationProperty Name="LOAI_VE" Relationship="Self.FK_VE_LOAI_VE" FromRole="VE" ToRole="LOAI_VE" />
+  </EntityType>
+  <Association Name="FK_DAT_VE_GHE">
+    <End Role="GHE" Type="Self.GHE" Multiplicity="0..1" />
+    <End Role="DAT_VE" Type="Self.DAT_VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GHE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DAT_VE">
+        <PropertyRef Name="Id_Ghe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DAT_VE_LICH_CHIEU">
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="0..1" />
+    <End Role="DAT_VE" Type="Self.DAT_VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LICH_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DAT_VE">
+        <PropertyRef Name="Id_LichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_GHE">
+    <End Role="GHE" Type="Self.GHE" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GHE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_Ghe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICH_CHIEU_PHIM">
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="0..1" />
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LICH_CHIEU">
+        <PropertyRef Name="Id_Phim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICH_CHIEU_PHONG_CHIEU">
+    <End Role="PHONG_CHIEU" Type="Self.PHONG_CHIEU" Multiplicity="0..1" />
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHONG_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LICH_CHIEU">
+        <PropertyRef Name="Id_PhongChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_LICH_CHIEU">
+    <End Role="LICH_CHIEU" Type="Self.LICH_CHIEU" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LICH_CHIEU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_LichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHIM_LOAI_PHIM">
+    <End Role="LOAI_PHIM" Type="Self.LOAI_PHIM" Multiplicity="0..1" />
+    <End Role="PHIM" Type="Self.PHIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_PHIM">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PHIM">
+        <PropertyRef Name="Id_LoaiPhim" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VE_LOAI_VE">
+    <End Role="LOAI_VE" Type="Self.LOAI_VE" Multiplicity="0..1" />
+    <End Role="VE" Type="Self.VE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_VE">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VE">
+        <PropertyRef Name="Id_LoaiVe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MovieDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DAT_VE" EntityType="Self.DAT_VE" />
+    <EntitySet Name="GHEs" EntityType="Self.GHE" />
+    <EntitySet Name="LICH_CHIEU" EntityType="Self.LICH_CHIEU" />
+    <EntitySet Name="LOAI_PHIM" EntityType="Self.LOAI_PHIM" />
+    <EntitySet Name="LOAI_VE" EntityType="Self.LOAI_VE" />
+    <EntitySet Name="PHIMs" EntityType="Self.PHIM" />
+    <EntitySet Name="PHONG_CHIEU" EntityType="Self.PHONG_CHIEU" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="VEs" EntityType="Self.VE" />
+    <AssociationSet Name="FK_DAT_VE_GHE" Association="Self.FK_DAT_VE_GHE">
+      <End Role="GHE" EntitySet="GHEs" />
+      <End Role="DAT_VE" EntitySet="DAT_VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DAT_VE_LICH_CHIEU" Association="Self.FK_DAT_VE_LICH_CHIEU">
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+      <End Role="DAT_VE" EntitySet="DAT_VE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_GHE" Association="Self.FK_VE_GHE">
+      <End Role="GHE" EntitySet="GHEs" />
+      <End Role="VE" EntitySet="VEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICH_CHIEU_PHIM" Association="Self.FK_LICH_CHIEU_PHIM">
+      <End Role="PHIM" EntitySet="PHIMs" />
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICH_CHIEU_PHONG_CHIEU" Association="Self.FK_LICH_CHIEU_PHONG_CHIEU">
+      <End Role="PHONG_CHIEU" EntitySet="PHONG_CHIEU" />
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_LICH_CHIEU" Association="Self.FK_VE_LICH_CHIEU">
+      <End Role="LICH_CHIEU" EntitySet="LICH_CHIEU" />
+      <End Role="VE" EntitySet="VEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHIM_LOAI_PHIM" Association="Self.FK_PHIM_LOAI_PHIM">
+      <End Role="LOAI_PHIM" EntitySet="LOAI_PHIM" />
+      <End Role="PHIM" EntitySet="PHIMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VE_LOAI_VE" Association="Self.FK_VE_LOAI_VE">
+      <End Role="LOAI_VE" EntitySet="LOAI_VE" />
+      <End Role="VE" EntitySet="VEs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
