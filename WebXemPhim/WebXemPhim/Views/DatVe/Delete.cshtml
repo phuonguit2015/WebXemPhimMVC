@@ -1,0 +1,112 @@
+﻿@model WebXemPhim.Models.Ve
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>XÓA VÉ</h2>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-warning"></i> Cảnh báo!</h4>
+        Bạn có thực sự muốn xóa?
+    </div>
+    <div>
+        <h4>Ve</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Ghe.SoGhe)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ghe.SoGhe)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LichChieu.LichChieuID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LichChieu.LichChieuID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LoaiVe.TenLoaiVe)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiVe.TenLoaiVe)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Code)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayDatVe)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayDatVe)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayThanhToan)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayThanhToan)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoCMND)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoCMND)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SoDienThoai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoDienThoai)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TenKhachHang)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenKhachHang)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <hr />
+                <span class="btn btn-default">
+                    @Html.ActionLink("Trở Về", "Index")
+                </span>
+                |
+                <input type="submit" value="Delete" class="btn btn-info" />
+
+            </div>
+        }
+    </div>
+</div>
+
+

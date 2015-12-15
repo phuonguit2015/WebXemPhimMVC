@@ -1,0 +1,72 @@
+﻿@model WebXemPhim.Models.LichChieu
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>XÓA LỊCH CHIẾU PHIM</h2>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-warning"></i> Cảnh báo!</h4>
+        Bạn có thực sự muốn xóa?
+    </div>
+    <div>
+        <h4>LichChieu</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Phim.TenPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phim.TenPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhongChieu.TenPhongChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhongChieu.TenPhongChieu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayChieu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GioChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioChieu)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <hr />
+                <span class="btn btn-default">
+                    @Html.ActionLink("Trở Về", "Index")
+                </span>
+                |
+                <input type="submit" value="Delete" class="btn btn-info" />
+
+            </div>
+        }
+    </div>
+</div>
+
+

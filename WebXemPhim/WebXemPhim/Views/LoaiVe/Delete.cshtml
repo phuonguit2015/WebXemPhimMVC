@@ -1,0 +1,55 @@
+﻿@model WebXemPhim.Models.LoaiVe
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>XÓA LOẠI PHIM</h2>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-warning"></i> Cảnh báo!</h4>
+        Bạn có thực sự muốn xóa?
+    </div>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TenLoaiVe)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenLoaiVe)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GiaTri)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GiaTri)
+            </dd>
+
+        </dl>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <hr />
+                <span class="btn btn-default">
+                    @Html.ActionLink("Trở Về", "Index")
+                </span>
+                |
+                <input type="submit" value="Delete" class="btn btn-info" />
+
+            </div>
+        }
+    </div>
+
+</div>
+

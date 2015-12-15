@@ -40,11 +40,14 @@
 
 }    
 
-#keywords thead {      
+#keywords thead tr th {      
     background: #c9dff0; 
     text-transform: uppercase;  
 }
 
+#table thead tr th {
+        text-transform: uppercase;  
+}
 /**CSS Create**/
 .form-horizontal{
     margin-right: 2em;

@@ -9,6 +9,8 @@ namespace WebXemPhim.Models
 {
     public class PhongChieu
     {
+
+        [DisplayName("Phòng Chiếu")]
         public int PhongChieuID { get; set; }
 
         [Required(ErrorMessage = "Bạn chưa nhập tên phòng chiếu.")]
@@ -21,5 +23,7 @@ namespace WebXemPhim.Models
 
         [DisplayName("Thông Tin")]
         public string ThongTin { get; set; }
+
+        public virtual ICollection<LichChieu> LichChieus { get; set; }
     }
 }

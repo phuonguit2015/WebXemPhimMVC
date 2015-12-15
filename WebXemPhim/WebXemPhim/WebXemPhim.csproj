@@ -138,9 +138,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DatVeController.cs" />
+    <Compile Include="Controllers\GheController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LichChieuController.cs" />
     <Compile Include="Controllers\LoaiPhimController.cs" />
+    <Compile Include="Controllers\LoaiVeController.cs" />
     <Compile Include="Controllers\PhimController.cs" />
+    <Compile Include="Controllers\PhongChieuController.cs" />
     <Compile Include="DAL\MovieDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -150,8 +155,13 @@
       <DependentUpon>201512150335026_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ghe.cs" />
+    <Compile Include="Models\LichChieu.cs" />
     <Compile Include="Models\LoaiPhim.cs" />
+    <Compile Include="Models\LoaiVe.cs" />
     <Compile Include="Models\Phim.cs" />
+    <Compile Include="Models\PhongChieu.cs" />
+    <Compile Include="Models\Ve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +240,31 @@
     <Content Include="Views\Phim\Details.cshtml" />
     <Content Include="Views\Phim\Edit.cshtml" />
     <Content Include="Views\Phim\Index.cshtml" />
+    <Content Include="Views\Ghe\Create.cshtml" />
+    <Content Include="Views\Ghe\Delete.cshtml" />
+    <Content Include="Views\Ghe\Details.cshtml" />
+    <Content Include="Views\Ghe\Edit.cshtml" />
+    <Content Include="Views\Ghe\Index.cshtml" />
+    <Content Include="Views\PhongChieu\Create.cshtml" />
+    <Content Include="Views\PhongChieu\Delete.cshtml" />
+    <Content Include="Views\PhongChieu\Details.cshtml" />
+    <Content Include="Views\PhongChieu\Edit.cshtml" />
+    <Content Include="Views\PhongChieu\Index.cshtml" />
+    <Content Include="Views\LoaiVe\Create.cshtml" />
+    <Content Include="Views\LoaiVe\Delete.cshtml" />
+    <Content Include="Views\LoaiVe\Details.cshtml" />
+    <Content Include="Views\LoaiVe\Edit.cshtml" />
+    <Content Include="Views\LoaiVe\Index.cshtml" />
+    <Content Include="Views\LichChieu\Create.cshtml" />
+    <Content Include="Views\LichChieu\Delete.cshtml" />
+    <Content Include="Views\LichChieu\Details.cshtml" />
+    <Content Include="Views\LichChieu\Edit.cshtml" />
+    <Content Include="Views\LichChieu\Index.cshtml" />
+    <Content Include="Views\DatVe\Create.cshtml" />
+    <Content Include="Views\DatVe\Delete.cshtml" />
+    <Content Include="Views\DatVe\Details.cshtml" />
+    <Content Include="Views\DatVe\Edit.cshtml" />
+    <Content Include="Views\DatVe\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

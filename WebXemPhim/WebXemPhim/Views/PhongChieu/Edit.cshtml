@@ -1,0 +1,56 @@
+﻿@model WebXemPhim.Models.PhongChieu
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<div class="container">
+    <h2>CẬP NHẬT THÔNG TIN PHÒNG CHIẾU</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.PhongChieuID)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TenPhongChieu, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TenPhongChieu, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TenPhongChieu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SoLuongGhe, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SoLuongGhe, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SoLuongGhe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ThongTin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ThongTin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ThongTin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cập Nhật" class="btn-themmoi btn btn-primary" />
+                    <span class="btn btn-default" style="color:#fff">@Html.ActionLink("Trở Về", "Index")</span>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+
+

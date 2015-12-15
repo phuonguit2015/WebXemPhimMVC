@@ -1,0 +1,62 @@
+﻿@model WebXemPhim.Models.LichChieu
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>THÔNG TIN LỊCH CHIẾU</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Phim.TenPhim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phim.TenPhim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PhongChieu.TenPhongChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PhongChieu.TenPhongChieu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayChieu)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GioChieu)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GioChieu)
+            </dd>
+
+        </dl>
+    </div>
+    <hr />
+    <div class="form-actions no-color">
+        <hr />
+        <span class="btn btn-default">
+            @Html.ActionLink("Trở Về", "Index")
+        </span>
+        |
+        <span class="btn btn-primary">
+            @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.LichChieuID })
+        </span>
+
+    </div>
+</div>
+
+

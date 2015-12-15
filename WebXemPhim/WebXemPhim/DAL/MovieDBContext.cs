@@ -22,5 +22,15 @@ namespace WebXemPhim.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.Ghe> Ghes { get; set; }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.PhongChieu> PhongChieux { get; set; }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.LoaiVe> LoaiVes { get; set; }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.LichChieu> LichChieux { get; set; }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.Ve> Ves { get; set; }
     }
 }

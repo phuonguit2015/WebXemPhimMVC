@@ -9,6 +9,7 @@ namespace WebXemPhim.Models
 {
     public class LoaiVe
     {
+        [DisplayName("Loại Vé")]
         public int LoaiVeID { get; set; }
 
         [Required(ErrorMessage = "Bạn chưa nhập tên loại vé.")]
@@ -16,7 +17,10 @@ namespace WebXemPhim.Models
         [DisplayName("Loại Vé")]
         public string TenLoaiVe { get; set; }
 
-        [DisplayName("Giá Trị")]
+        [DisplayName("Giá Vé")]
         public decimal GiaTri { get; set; }
+
+        public virtual ICollection<Ve> Ves { get; set; }
+
     }
 }

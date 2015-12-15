@@ -16,6 +16,7 @@ namespace WebXemPhim.Models
 
     public class Phim
     {
+        [DisplayName("Phim")]
         public int PhimID { get; set; }
         [Required(ErrorMessage = "Bạn chưa nhập tên  phim.")]
         [StringLength(200, ErrorMessage = "Số ký tự nhập tối đa là 200.")]
@@ -50,5 +51,8 @@ namespace WebXemPhim.Models
         public int LoaiPhimID { get; set; }
 
         public virtual LoaiPhim LoaiPhim { get; set; }
+        public virtual ICollection<LichChieu> LichChieus { get; set; }
+        public virtual ICollection<Ve> Ves { get; set; }
+
     }
 }

@@ -11,6 +11,7 @@ namespace WebXemPhim.Models
 {
     public class LoaiPhim
     {
+        [DisplayName("Loại Phim")]
         public int LoaiPhimID { get; set; }
 
         [Required(ErrorMessage ="Bạn chưa nhập tên loại phim.")]

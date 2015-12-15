@@ -94,14 +94,14 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">             
                 <!-- search form -->
-                <form action="#" method="get" class="sidebar-form">
+                @*<form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Tìm kiếm...">
                         <span class="input-group-btn">
                             <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
                         </span>
                     </div>
-                </form>
+                </form>*@
                 <!-- /.search form -->
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
@@ -110,19 +110,14 @@
                         <a href="#">
                             <i class="fa fa-home"></i> <span>TRANG CHỦ</span>
                         </a>                       
-                    </li>
+                    </li>                   
                     <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-book"></i> <span>QUẢN LÝ ĐẶT VÉ</span>
-                        </a>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","Ghe",null, Request.Url.Scheme)">
                             <i class="fa fa-square"></i> <span>QUẢN LÝ GHẾ</span>
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","LichChieu",null, Request.Url.Scheme)">
                             <i class="fa fa-tasks"></i> <span>QUẢN LÝ LỊCH CHIẾU</span>
                         </a>
                     </li>
@@ -132,22 +127,22 @@
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","LoaiVe",null, Request.Url.Scheme)">
                             <i class="fa fa-hand-o-right"></i> <span>QUẢN LÝ LOẠI VÉ</span>
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","Phim",null, Request.Url.Scheme)">
                             <i class="fa fa-file-video-o"></i> <span>QUẢN LÝ PHIM</span>
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","PhongChieu",null, Request.Url.Scheme)">
                             <i class="fa fa-slack"></i> <span>QUẢN LÝ PHÒNG CHIẾU PHIM</span>
                         </a>
                     </li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","DatVe",null, Request.Url.Scheme)">
                             <i class="fa fa-ticket"></i> <span>QUẢN LÝ VÉ</span>
                         </a>
                     </li>                    
@@ -157,7 +152,7 @@
         </aside>
         <!-- =============================================== -->
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="padding-left: 2em;">
+        <div class="content-wrapper" style="padding-left: 2em; min-height: 580px;">
             <!-- Content Header (Page header) -->
             @RenderBody()
            
