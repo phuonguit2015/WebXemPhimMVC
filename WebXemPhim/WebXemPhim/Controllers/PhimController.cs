@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using WebXemPhim.DAL;
 using WebXemPhim.Models;
 using PagedList;
+using System.IO;
 
 namespace WebXemPhim.Controllers
 {
@@ -85,10 +86,18 @@ namespace WebXemPhim.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PhimID,TenPhim,DaoDien,DienVien,NoiDung,Poster,ThoiLuong,TrailerURL,TrangThai,NgayChieu,LoaiPhimID")] Phim phim)
+        public ActionResult Create([Bind(Include = "PhimID,TenPhim,DaoDien,DienVien,NoiDung,Poster,ThoiLuong,TrailerURL,TrangThai,NgayChieu,LoaiPhimID")] Phim phim, HttpPostedFileBase uploadFile)
         {
-            if (ModelState.IsValid)
+            if (uploadFile == null)
             {
+                ModelState.AddModelError(string.Empty, "An image file must be chosen.");
+            }
+            else if (ModelState.IsValid)
+            {
+                using (var reader = new System.IO.BinaryReader(uploadFile.InputStream))
+                {
+                    phim.Poster = reader.ReadBytes(uploadFile.ContentLength);
+                }
                 db.Phims.Add(phim);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -119,10 +128,19 @@ namespace WebXemPhim.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PhimID,TenPhim,DaoDien,DienVien,NoiDung,Poster,ThoiLuong,TrailerURL,TrangThai,NgayChieu,LoaiPhimID")] Phim phim)
+        public ActionResult Edit([Bind(Include = "PhimID,TenPhim,DaoDien,DienVien,NoiDung,Poster,ThoiLuong,TrailerURL,TrangThai,NgayChieu,LoaiPhimID")] Phim phim,
+            HttpPostedFileBase uploadFile)
         {
-            if (ModelState.IsValid)
+            if (uploadFile == null)
             {
+                ModelState.AddModelError(string.Empty, "Hình ảnh Poster chưa được chọn.");
+            }
+            else if(ModelState.IsValid)
+            {
+                using (var reader = new System.IO.BinaryReader(uploadFile.InputStream))
+                {
+                    phim.Poster = reader.ReadBytes(uploadFile.ContentLength);
+                }
                 db.Entry(phim).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -157,6 +175,19 @@ namespace WebXemPhim.Controllers
             return RedirectToAction("Index");
         }
 
+        // Trả về Poster của từng image
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult ViewImage(int id)
+        {
+            var item = db.Phims.FirstOrDefault<Phim>(p => p.PhimID == id);
+            if (item == null)
+                return null;
+            byte[] buffer = item.Poster;
+            return File(buffer, "image/jpg", string.Format("{0}.jpg", id));
+        }
+
+     
         protected override void Dispose(bool disposing)
         {
             if (disposing)

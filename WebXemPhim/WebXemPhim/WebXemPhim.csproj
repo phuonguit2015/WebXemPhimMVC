@@ -139,6 +139,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DatVeController.cs" />
+    <Compile Include="Controllers\FileImageController.cs" />
     <Compile Include="Controllers\GheController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LichChieuController.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Controllers\LoaiVeController.cs" />
     <Compile Include="Controllers\PhimController.cs" />
     <Compile Include="Controllers\PhongChieuController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="DAL\MovieDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +180,30 @@
     <Content Include="Content\css\AdminCSSLayout\skin-blue-light.css" />
     <Content Include="Content\css\AdminCSSLayout\skin-blue-light.min.css" />
     <Content Include="Content\css\AdminCSSLayout\_all-skins.min.css" />
+    <Content Include="Content\css\nguoidung-style.css" />
+    <Content Include="Content\css\NguoiDungCSSLayout\bootstrap-responsive.min.css" />
+    <Content Include="Content\css\NguoiDungCSSLayout\bootstrap.min.css" />
+    <Content Include="Content\css\NguoiDungCSSLayout\font-awesome.min.css" />
+    <Content Include="Content\css\NguoiDungCSSLayout\main.css" />
+    <Content Include="Content\css\NguoiDungCSSLayout\sl-slide.css" />
+    <Content Include="Content\css\PhimDangChieu.css" />
+    <Content Include="Content\css\Slider\demo.css" />
+    <Content Include="Content\css\Slider\noscript.css" />
+    <Content Include="Content\css\Slider\reset.css" />
+    <Content Include="Content\css\Slider\style.css" />
+    <Content Include="Content\image\05.png" />
+    <Content Include="Content\image\4dx.jpg" />
+    <Content Include="Content\image\4dx1.jpg" />
+    <Content Include="Content\image\banner-cgv-red-blank1.jpg" />
+    <Content Include="Content\image\banner-quang-cao-cgv.jpg" />
+    <Content Include="Content\image\cgv.jpg" />
+    <Content Include="Content\image\cgv1.jpg" />
+    <Content Include="Content\image\dolby.png" />
+    <Content Include="Content\image\go-premium-logo.png" />
+    <Content Include="Content\image\imax.jpg" />
+    <Content Include="Content\image\logo.png" />
+    <Content Include="Content\image\quangcao.jpg" />
+    <Content Include="Content\image\sweetbox.jpg" />
     <Content Include="Content\image\user.png" />
     <Content Include="Content\js\AdminJSLayout\app.min.js" />
     <Content Include="Content\js\AdminJSLayout\bootstrap-datepicker.js" />
@@ -193,6 +219,12 @@
     <Content Include="Content\js\AdminJSLayout\jquery.slimscroll.min.js" />
     <Content Include="Content\js\AdminJSLayout\jquery.sparkline.min.js" />
     <Content Include="Content\js\AdminJSLayout\morris.min.js" />
+    <Content Include="Content\js\jquery-1.9.1.min.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Content\js\Slider\jquery.easing.1.3.js" />
+    <Content Include="Content\js\Slider\jquery.eislideshow.js" />
+    <Content Include="Content\js\Slider\tmp.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -265,9 +297,15 @@
     <Content Include="Views\DatVe\Details.cshtml" />
     <Content Include="Views\DatVe\Edit.cshtml" />
     <Content Include="Views\DatVe\Index.cshtml" />
+    <Content Include="Views\Layout\NguoiDungLayout.cshtml" />
+    <Content Include="Views\TrangChu\Index.cshtml" />
+    <Content Include="Views\TrangChu\PhimDangChieu.cshtml" />
+    <Content Include="Views\TrangChu\DatVePartial.cshtml" />
+    <Content Include="Views\TrangChu\PhimSapChieuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\FileImage\" />
     <Folder Include="Views\Validation\" />
   </ItemGroup>
   <ItemGroup>

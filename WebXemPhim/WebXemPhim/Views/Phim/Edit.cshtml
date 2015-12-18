@@ -10,7 +10,7 @@
     <h2>CẬP NHẬT PHIM</h2>
 
     <hr />
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Edit", "Phim", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
@@ -55,7 +55,18 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Poster, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Poster, new { htmlAttributes = new { @class = "form-control" } })
+                    <div class="img-poster">
+                        @if (Model.Poster != null)
+                        {
+                            <img class="poster" src="~/Phim/ViewImage?id=@Model.PhimID" alt="picture" />
+                        }
+                        else
+                        {
+                            <img class="poster" src="http://placehold.it/320x150" alt="">
+                        }
+                    </div>    
+                    <input type="file" name="uploadFile" />    
+                    @*@Html.EditorFor(model => model.Poster, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.ValidationMessageFor(model => model.Poster, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -98,17 +109,18 @@
                     @Html.DropDownList("LoaiPhimID", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.LoaiPhimID, "", new { @class = "text-danger" })
                 </div>
-            </div>           
+            </div>    
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Cập Nhật" class="btn-themmoi btn btn-primary" />
+                    <span class="btn btn-default" style="color:#fff">@Html.ActionLink("Trở Về", "Index")</span>
+
+                </div>
+            </div>       
         </div>
     }
-    <hr />
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Cập Nhật" class="btn-themmoi btn btn-primary" />
-            <span class="btn btn-default" style="color:#fff">@Html.ActionLink("Trở Về", "Index")</span>
-
-        </div>
-    </div>
+   
 
 </div>
 

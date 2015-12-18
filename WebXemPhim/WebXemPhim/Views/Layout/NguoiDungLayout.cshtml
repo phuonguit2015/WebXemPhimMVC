@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="~/Content/css/NguoiDungCSSLayout/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/NguoiDungCSSLayout/bootstrap-responsive.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="~/Content/css/NguoiDungCSSLayout/main.css" rel="stylesheet" />
+    <link href="~/Content/css/NguoiDungCSSLayout/sl-slide.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Patrick+Hand|Itim&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <!--Custom CSS-->
+    <link href="~/Content/css/nguoidung-style.css" rel="stylesheet" />
+    <script src="~/Content/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+</head>
+<body>
+    <!--Header-->
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a id="logo" class="pull-left" href="#" style="background: url('../../Content/image/logo.png') no-repeat 0 50%;"></a>
+                <div class="nav-collapse collapse pull-right">
+                    <ul class="nav">
+                        <li><a href="#">TRANG CHỦ</a></li>
+                        <li><a href="#">VỀ CHÚNG TÔI</a></li>
+                        <li><a href="#">LỊCH CHIẾU</a></li>
+                        <li><a href="#">PHIM</a></li>
+                        <li><a href="#">RẠP/GIÁ VÉ</a></li>
+                        <li><a href="#">ƯU ĐÃI SỰ KIỆN</a></li>
+                        <li><a href="#">LIÊN HỆ</a></li>                       
+                        <li class="login">
+                            <a data-toggle="modal" href="#loginForm"><i class="fa fa-sign-in"></i></a>
+                        </li>
+                        <li id="datve"  >
+                            <a  href="#" style="color: #fff; font-size: large;">ĐẶT VÉ</a>
+                        </li>
+
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <!-- Noi dung -->
+    <section>
+        @RenderBody()
+    </section>
+    <!-- /Noi dung -->
+    <!--Bottom-->
+    <section id="bottom" class="main">
+        <!--Container-->
+        <div class="container">
+            <!--row-fluids-->
+            <div class="row-fluid">
+                <!--Contact Form-->
+                <div class="col-md-4">
+                    <h4>ĐỊA CHỈ</h4>
+                    <ul class="unstyled address">
+                        <li>
+                            <i class="fa fa-location-arrow"></i>
+                            <strong>Địa chỉ:</strong> Khu phố 6, P. Linh Trung, Quận Thủ Đức,<br /> Tp. Hồ Chí Minh
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope-o"></i>
+                            <strong>Email: </strong> support@email.com
+                        </li>
+                        <li>
+                            <i class="fa fa-globe"></i>
+                            <strong>Website:</strong> www.uit.edu.vn
+                        </li>                       
+                    </ul>
+                </div>
+                <!--End Contact Form-->
+                <!--Important Links-->
+                <div id="tweets" class="col-md-4">
+                    <h4>THÔNG TIN</h4>
+                    <div>
+                        <ul class="arrow">
+                            <li><a href="#">Về Chúng Tôi</a></li>
+                            <li><a href="#">Lịch Chiếu</a></li>
+                            <li><a href="#">Phim</a></li>
+                            <li><a href="#">Rạp</a></li>
+                            <li><a href="#">Ưu Đãi Sự Kiện</a></li>
+                            <li><a href="#">Đặt Vé</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Important Links-->          
+                <div class="col-md-4">
+                    <h4>GALLERY</h4>
+                    <div class="row-fluid first">
+                        <ul class="thumbnails">
+                            <li class="span3">
+                                <a href="#" ><img src="~/Content/image/05.png" width="75" height="75" ></a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" ><img src="~/Content/image/4dx.jpg" width="75" height="75"></a>
+                            </li>
+                            <li class="span3">
+                                <a href="#"><img src="~/Content/image/dolby.png" width="75" height="75" ></a>
+                            </li>
+                            <li class="span3">
+                                <a href="#"><img src="~/Content/image/cgv.jpg" width="75" height="75"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row-fluid">
+                        <ul class="thumbnails">
+                            <li class="span3">
+                                <a href="" ><img src="~/Content/image/cgv1.jpg" width="75" height="75" ></a>
+                            </li>
+                            <li class="span3">
+                                <a href="" ><img src="~/Content/image/sweetbox.jpg" width="75" height="75" ></a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" ><img src="~/Content/image/imax.jpg" width="75" height="75" ></a>
+                            </li>
+                            <li class="span3">
+                                <a href="#" ><img src="~/Content/image/go-premium-logo.png" width="75" height="75" ></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/row-fluid-->
+        </div>
+        <!--/container-->
+    </section>
+    <!--/bottom-->
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span5 cp">
+                    &copy; 2015 <a target="_blank" href="#" >Dafuq Team Studio</a>.
+                </div>
+                <!--/Copyright-->
+                <div class="span6">
+                    <ul class="social pull-right">
+                        <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-windows"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></li>
+                    </ul>
+                </div>
+                <div class="span1">
+                    <a id="gototop" class="gototop pull-right" href="#"><i class="fa fa-chevron-up"></i></a>
+                </div>
+                <!--/Goto Top-->
+            </div>
+        </div>
+    </footer>
+    <!--/Footer-->
+    <!--  Login form -->
+    <div class="modal hide fade in" id="loginForm" aria-hidden="false">
+        <div class="modal-header">
+            <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
+            <h4>Đăng Nhập</h4>
+        </div>
+        <!--Modal Body-->
+        <div class="modal-body">
+            <form class="form-inline" action="#" method="post" id="form-login">
+                <input type="text" class="input-small" placeholder="Email">
+                <input type="password" class="input-small" placeholder="Mật khẩu">
+                <label class="checkbox">
+                    <input type="checkbox"> Nhớ tài khoản
+                </label>
+                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+            </form>
+            <a href="#">Quên mật khẩu?</a>
+        </div>
+        <!--/Modal Body-->
+    </div>
+    <!--  /Login form -->
+    <script src="~/Content/js/jquery-1.9.1.min.js"></script>
+    <script src="~/Content/js/AdminJSLayout/bootstrap.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/Slider/jquery.eislideshow.js"></script>
+    <script type="text/javascript" src="~/Content/js/Slider/jquery.easing.1.3.js"></script>
+    <script src="~/Content/js/Slider/tmp.js"></script>
+</body>
+</html>

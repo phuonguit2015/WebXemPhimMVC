@@ -63,7 +63,16 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Poster)
+                        <div class="img-poster">
+                            @if (@item.Poster != null)
+                            {
+                                <img class="poster" src="~/Phim/ViewImage?id=@item.PhimID " alt="picture" />
+                            }
+                            else
+                            {
+                                <img class="poster" src="http://placehold.it/320x150" alt="">
+                            }
+                        </div>                       
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.TenPhim)

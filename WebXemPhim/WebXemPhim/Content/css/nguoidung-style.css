@@ -1,0 +1,122 @@
+﻿body {
+}
+
+header.navbar .nav>li>a {
+    font-family: 'Itim', cursive;
+}
+.span8 {
+    width: 70%;
+    padding: 10px;
+    float:left;
+}
+
+.span4 {
+    width: 23%;
+    float:left;
+    min-height: 450px;
+    padding-top: 120px;
+}
+.right-collumn {
+     min-height: 450px;
+}
+
+.col-md-4 {
+    width: 30%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-md-4>h4 {
+    font-family:Tahoma;
+}
+.row-fluid .span3{
+    width: 75px;
+    height: 75px;
+}
+.span3>a>img {
+    width: 100%;
+    height: 100%;
+}
+.btn-datve {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#datve {
+    border: 1px solid #eee;border-radius: 6px;background-color: #9B59B6;padding-left: 2em;padding-right: 2em;
+}
+#datve:hover {
+    background-color:#6f6f6f;   
+}
+
+.navbar-inner {
+    border-bottom: 1px solid #9B59B6 !important;
+}
+.container{
+   
+}
+#slide-show {
+    margin-left: 0px;
+    width: 100%;
+}
+.ei-slider-thumbs {
+    display: block;
+    max-width: 100% !important;
+    margin: 0 !important;
+}
+
+.ei-slider-large {
+    margin-left: 0px;
+}
+
+.ei-slider-large>li>img {
+    margin-top: 0px !important;
+    width: 100% !important;
+    height:100% !important;
+}
+.ei-slider-thumbs>li{
+    width: 14.2857% !important;
+    max-width:  14.2857% !important;
+}
+
+.box-trailer {
+    border: 1px solid #fff;
+    position: absolute;
+    right: 10%;
+    top: 5%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right:1em;
+    background-color: #f79320;
+}
+
+.box-chitiet{
+     border: 1px solid #fff;    
+     position: absolute;
+    right: 2%;
+    top: 5%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right:1em;
+    background-color: #f79320;
+
+}
+
+.box-chitiet:hover, .box-trailer:hover{
+    background-color: #9B59B6;
+}
+
+#btnSearch{
+     width: 100%;
+    background-color: #9B59B6;
+    min-height: 40px;
+    font-size: x-large;
+    font-family: 'Itim',cursive;
+}  
+#btnSearch:hover{
+    background-color:#6f6f6f;   
+
+}

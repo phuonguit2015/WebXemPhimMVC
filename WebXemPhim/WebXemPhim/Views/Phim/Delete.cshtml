@@ -62,7 +62,16 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Poster)
+                <div class="img-poster">
+                    @if (Model.Poster != null)
+                    {
+                        <img class="poster" src="~/Phim/ViewImage?id=@Model.PhimID" alt="picture" />
+                    }
+                    else
+                    {
+                        <img class="poster" src="http://placehold.it/320x150" alt="">
+                    }
+                </div>        
             </dd>
 
             <dt>

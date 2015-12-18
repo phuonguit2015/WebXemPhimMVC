@@ -15,7 +15,8 @@ namespace WebXemPhim.Models
     }
 
     public class Phim
-    {
+    {     
+
         [DisplayName("Phim")]
         public int PhimID { get; set; }
         [Required(ErrorMessage = "Bạn chưa nhập tên  phim.")]
@@ -53,6 +54,7 @@ namespace WebXemPhim.Models
         public virtual LoaiPhim LoaiPhim { get; set; }
         public virtual ICollection<LichChieu> LichChieus { get; set; }
         public virtual ICollection<Ve> Ves { get; set; }
+        //public List<HttpPostedFileBase> Files { get; set; }
 
     }
 }

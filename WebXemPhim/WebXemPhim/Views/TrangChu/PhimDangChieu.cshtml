@@ -1,0 +1,110 @@
+﻿@model List<WebXemPhim.Models.Phim>
+<link href="~/Content/css/PhimDangChieu.css" rel="stylesheet" />
+<section id="showing">
+    <section>
+        <div class="main">
+            <h2 class="blockTitle">
+                <a href="#" title="Phim đang chiếu">Phim đang chiếu</a>
+                <small>Đừng bỏ lỡ các bộ phim hấp dẫn của điện ảnh Việt Nam và Thế Giới</small>
+            </h2>
+            <div class="movie">
+                <div class="featuredMovie" style="width: 30%">
+                    <a href="#">
+                        <img src="~/Phim/ViewImage?id=@Model[0].PhimID" style="height:100%; width:100%">
+                    </a>
+                    <div class="movie-info">  
+                        <a class="main-trailer" href="#"><i class="fa fa-play-circle"></i> Trailer</a>
+                        <a class="main-cta" href="#">MUA VÉ</a>
+                    </div>
+                    <span class="publish-date-new">
+                        <span class="date">@Model[0].NgayChieu.Day</span>
+                        <span class="month">/@Model[0].NgayChieu.Month</span>
+                    </span>
+                </div>
+                <ul class="otherMovies " style="width:500px; margin-left: 5%">
+                    <li>
+                        <div class="container" style="width:100%; height: 100%;">
+                            <a href="#">
+                                <img src="~/Phim/ViewImage?id=@Model[1].PhimID" height="230" width="160">
+                            </a>
+                            <div class="movie-info">
+                                <a class="main-trailer" href="#">TRAILER</a>
+                                <a class="main-cta" href="#">MUA VÉ</a>
+                            </div>
+                            <span class="publish-date-new">
+                                <span class="date">@Model[1].NgayChieu.Day</span>
+                                <span class="month">/@Model[1].NgayChieu.Month</span>
+                            </span>
+                        </div>
+                       
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Phim/ViewImage?id=@Model[2].PhimID" height="230" width="160">
+                        </a>
+                        <div class="movie-info">
+                            <a class="main-trailer" href="#">TRAILER</a>
+                            <a class="main-cta" href="#">MUA VÉ</a>
+                        </div>
+                        <span class="publish-date-new">
+                            <span class="date">@Model[2].NgayChieu.Day</span>
+                            <span class="month">/@Model[2].NgayChieu.Day</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Phim/ViewImage?id=@Model[3].PhimID" height="230" width="160">
+                        </a>
+                        <div class="movie-info">
+                            <a class="main-trailer" href="#">TRAILER</a>
+                            <a class="main-cta" href="#">MUA VÉ</a>
+                        </div>
+                        <span class="publish-date-new">
+                            <span class="date">@Model[3].NgayChieu.Day</span>
+                            <span class="month">/@Model[3].NgayChieu.Day</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Phim/ViewImage?id=@Model[4].PhimID" height="230" width="160">
+                        </a>
+                        <div class="movie-info">
+                            <a class="main-trailer" href="#">TRAILER</a>
+                            <a class="main-cta" href="#">MUA VÉ</a>
+                        </div>
+                        <span class="publish-date-new">
+                            <span class="date">@Model[4].NgayChieu.Day</span>
+                            <span class="month">/@Model[4].NgayChieu.Day</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Phim/ViewImage?id=@Model[5].PhimID" height="230" width="160">
+                        </a>
+                        <div class="movie-info">
+                            <a class="main-trailer" href="#">TRAILER</a>
+                            <a class="main-cta" href="#">MUA VÉ</a>
+                          </div>
+                        <span class="publish-date-new">
+                            <span class="date">@Model[5].NgayChieu.Day</span>
+                            <span class="month">/@Model[5].NgayChieu.Month</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="~/Phim/ViewImage?id=@Model[6].PhimID" height="230" width="160">
+                        </a>
+                        <div class="movie-info">
+                            <a class="main-trailer" href="#">TRAILER</a>
+                            <a class="main-cta" href="#">MUA VÉ</a>
+                        </div>
+                        <span class="publish-date-new">
+                            <span class="date">@Model[6].NgayChieu.Day</span>
+                            <span class="month">/@Model[6].NgayChieu.Month</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
