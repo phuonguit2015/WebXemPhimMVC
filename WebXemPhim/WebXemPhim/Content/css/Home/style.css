@@ -1,0 +1,176 @@
+﻿/*media all*/
+.main {
+    font-family: 'Segoe UI';
+   }
+ul {
+	list-style: none;
+}
+/*media all*/
+.right-content {
+    padding: 1em;  
+}
+/*media all*/
+.right-content-heading {
+    border-bottom: 1px solid #F1F0F6;
+    margin: 0 0 3em 0;
+}
+/*media all*/
+.right-content-heading-left {
+    padding: 11px 0;
+}
+/*media all*/
+h3.head {
+    color: #000;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+/*media all*/
+.right-content-heading-left h3 {
+    color: #000;
+    text-transform: uppercase;
+    display: block;
+}
+.content-grids{
+    padding-left: 1em;
+}
+img {
+    vertical-align: middle;
+}
+/*media all*/
+.content-grid:hover img {
+    -webkit-filter: grayscale(100%);
+    opacity: 5;
+    transition: all 300ms !important;
+    -webkit-transition: all 300ms !important;
+    -moz-transition: all 300ms !important;
+}
+
+/*media all*/
+.content-grid {
+    width: 22%;
+    float: left;
+    text-align: center;
+    border: 1px solid rgba(235, 235, 235, 0.53);
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.35);
+    margin-right: 3%;
+    margin-bottom: 4%;
+    position: relative;
+}
+/*media all*/
+.content-grid img {
+    display: block;
+    transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    width: 100%;
+}
+/*media all*/
+.content-grid h3 {
+    color: #000;
+    text-transform: uppercase;
+    padding: 1em;
+    display: block;
+    line-height: 1.5em;
+    font-size: 14px;
+    height: 80px;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+}
+/*media all*/
+ul {
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+/*media all*/
+.content-grid ul li {
+    display: inline-block;
+}
+/*media all*/
+.content-grid ul li a {
+    padding: 0 5px;
+    display: block;
+
+}
+/*media all*/
+.button {
+    background: #000;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    color: #fff;
+    outline: none;
+    text-transform: uppercase;
+    display: block;
+    margin: 10px 0 0 0;
+     font-family: 'Segoe UI';
+    font-size:16px;       
+}
+/*media all*/
+.last-grid {
+    margin-right: 0px;
+}
+/*media all*/
+.pagenation {
+    text-align: center;
+}
+/*media all*/
+.pagenation ul li a {
+    background: #000;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
+    color: #fff;
+    outline: none;
+    text-transform: uppercase;
+    display: block;
+    font-size: 0.87em;
+   
+}
+/*media all*/
+.pagenation ul li {
+    display: inline-block;
+}
+.clearfix::after, .container::after, .container-fluid::after, .row::after, .form-horizontal .form-group::after, .btn-toolbar::after, .btn-group-vertical > .btn-group::after, .nav::after, .navbar::after, .navbar-header::after, .navbar-collapse::after, .pager::after, .panel-body::after, .modal-footer::after {
+    clear: both;
+}
+.content-grid>a:hover, .content-grid>a:focus{
+    color: #e74c3c;
+    text-decoration: underline;
+}
+.content-grid>a{
+    color: #fff;
+    text-decoration: none;
+  
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*Ngày chiếu phim*/
+.ngay-chieu {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    padding: 3px 10px;
+    color: #fff;    
+    background-color: #f79320;
+    font-weight: 400;
+}
+.trang-thai {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    padding: 3px 10px;
+    color: #fff;    
+    background-color: #9B59B6;
+    font-weight: 400;
+}
+

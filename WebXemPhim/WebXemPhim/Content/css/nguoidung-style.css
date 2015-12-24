@@ -1,4 +1,10 @@
 ﻿body {
+    background: #fff;
+    font-family: 'Segoe UI';
+}
+.container {
+    padding-top: 0px;
+    font-family: 'Segoe UI';
 }
 
 header.navbar .nav>li>a {
@@ -19,7 +25,9 @@ header.navbar .nav>li>a {
 .right-collumn {
      min-height: 450px;
 }
-
+#bottom {
+        font-size: small;
+}
 .col-md-4 {
     width: 30%;
     float: left;
@@ -31,9 +39,9 @@ header.navbar .nav>li>a {
 .col-md-4>h4 {
     font-family:Tahoma;
 }
-.row-fluid .span3{
-    width: 75px;
-    height: 75px;
+#bottom ul.thumbnails li{
+    width: 60px;
+    height: 65px;
 }
 .span3>a>img {
     width: 100%;
@@ -119,4 +127,9 @@ header.navbar .nav>li>a {
 #btnSearch:hover{
     background-color:#6f6f6f;   
 
+}
+
+#dllPhim, #dllLichChieu {
+    width: 100%;
+    border:2px solid #9B59B6;
 }

@@ -10,15 +10,13 @@
     <link type="text/css" href="~/Content/css/Slider/noscript.css" rel="stylesheet" />
 </noscript>
 
-
-
 <div class="wrapper" style="width: 100%; height: 400px; padding-top:30px">
     <div id="ei-slider" class="ei-slider">
         <ul class="ei-slider-large">
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[0].PhimID" alt="image01" />
+                <img src="~/Phim/ViewImage?id=@Model[0].PhimID&width=1200&height=400" alt="image01" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[0].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
@@ -26,54 +24,54 @@
             </li>
 
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[1].PhimID" alt="image02" />
+                <img src="~/Phim/ViewImage?id=@Model[1].PhimID&width=1200&height=400" alt="image02" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[1].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
                 </div>
             </li>
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[2].PhimID" alt="image03" />
+                <img src="~/Phim/ViewImage?id=@Model[2].PhimID&width=1200&height=400" alt="image03" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[2].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
                 </div>
             </li>
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[3].PhimID" alt="image04" />
+                <img src="~/Phim/ViewImage?id=@Model[3].PhimID&width=1200&height=400" alt="image04" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[4].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
                 </div>
             </li>
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[4].PhimID" alt="image05" />
+                <img src="~/Phim/ViewImage?id=@Model[4].PhimID&width=1200&height=400" alt="image05" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[4].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
                 </div>
             </li>
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[5].PhimID" alt="image06" />
+                <img src="~/Phim/ViewImage?id=@Model[5].PhimID&width=1200&height=400" alt="image06" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[5].TrailerURL" style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
                 </div>
             </li>
             <li>
-                <img src="~/Phim/ViewImage?id=@Model[6].PhimID" alt="image07" />
+                <img src="~/Phim/ViewImage?id=@Model[6].PhimID&width=1200&height=400" alt="image07" />
                 <div class="box-trailer">
-                    <a href="#" style="color:#fff">TRAILER</a>
+                    <a data-toggle="modal" data-target=".bootstrapmodal" href="@Model[6].TrailerURL"  style="color:#fff">TRAILER</a>
                 </div>
                 <div class="box-chitiet">
                     <a href="#" style="color:#fff">CHI TIẾT</a>
@@ -82,16 +80,20 @@
         </ul><!-- ei-slider-large -->
         <ul class="ei-slider-thumbs">
             <li class="ei-slider-element" style=" width: 16.6667%;">Current</li>
-            <li style="width: 16.6667%;"><a href="#">Slide 1</a><img src="~/Phim/ViewImage?id=@Model[0].PhimID" alt="thumb01" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 2</a><img src="~/Phim/ViewImage?id=@Model[1].PhimID" alt="thumb02" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 3</a><img src="~/Phim/ViewImage?id=@Model[2].PhimID" alt="thumb03" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 4</a><img src="~/Phim/ViewImage?id=@Model[3].PhimID" alt="thumb04" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 5</a><img src="~/Phim/ViewImage?id=@Model[4].PhimID" alt="thumb05" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 6</a><img src="~/Phim/ViewImage?id=@Model[5].PhimID" alt="thumb06" /></li>
-            <li style=" width: 16.6667%;"><a href="#">Slide 7</a><img src="~/Phim/ViewImage?id=@Model[6].PhimID" alt="thumb07" /></li>
+            <li style="width: 16.6667%;"><a href="#">Slide 1</a><img src="~/Phim/ViewImage?id=@Model[0].PhimID&width=300&height=200" alt="thumb01" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 2</a><img src="~/Phim/ViewImage?id=@Model[1].PhimID&width=300&height=200" alt="thumb02" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 3</a><img src="~/Phim/ViewImage?id=@Model[2].PhimID&width=300&height=200" alt="thumb03" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 4</a><img src="~/Phim/ViewImage?id=@Model[3].PhimID&width=300&height=200" alt="thumb04" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 5</a><img src="~/Phim/ViewImage?id=@Model[4].PhimID&width=300&height=200" alt="thumb05" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 6</a><img src="~/Phim/ViewImage?id=@Model[5].PhimID&width=300&height=200" alt="thumb06" /></li>
+            <li style=" width: 16.6667%;"><a href="#">Slide 7</a><img src="~/Phim/ViewImage?id=@Model[6].PhimID&width=300&height=200" alt="thumb07" /></li>
         </ul><!-- ei-slider-thumbs -->
     </div><!-- ei-slider -->
 </div><!-- wrapper -->
+
+<!--Modal Popup-->
+@Html.Action("ModalPartial", "Home")
+<!--/Modal Popup-->
 
 
 <!--Phim Đang Chiếu-->
@@ -111,8 +113,20 @@
 
 
 <!--Khuyến Mãi-->
-<div class="row" style="min-height: 400px;background:#252525; background-repeat:no-repeat; background-size:cover">
-    
+<div class="row" style="min-height: 500px; padding-bottom: 3em; background:#ebebeb; background-repeat:no-repeat; background-size:cover">
+    <div class="container">
+        <div class="span8">
+            <h2 class="blockTitle">
+                <a href="/phim/?iref=home-pdc" title="Tin khuyến mãi" style="color:orangered">Tin khuyến mãi</a>
+                <small>Những ưu đãi mới nhất cho người hâm mộ điện ảnh</small>
+            </h2>            
+        </div>
+        <div class="span4">
+            <div class="right-collumn" style="background-image: url('../../Content/image/quangcao.jpg'); ">
+                <!--Quảng cáo-->
+            </div>
+        </div>
+    </div>
 </div>
 <!--Phim Đang Chiếu-->
 
@@ -122,7 +136,6 @@
     <div class="container">
         <div class="span8">
             @Html.Action("PhimSapChieuPartial", "TrangChu");
-
         </div>
         <div class="span4">
             <div class="right-collumn" style="background-image: url('../../Content/image/quangcao.jpg'); ">

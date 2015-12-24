@@ -148,6 +148,7 @@
     <Compile Include="Controllers\PhimController.cs" />
     <Compile Include="Controllers\PhongChieuController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\Utils.cs" />
     <Compile Include="DAL\MovieDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,6 +164,7 @@
     <Compile Include="Models\LoaiVe.cs" />
     <Compile Include="Models\Phim.cs" />
     <Compile Include="Models\PhongChieu.cs" />
+    <Compile Include="Models\ShortLichChieu.cs" />
     <Compile Include="Models\Ve.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -180,6 +182,8 @@
     <Content Include="Content\css\AdminCSSLayout\skin-blue-light.css" />
     <Content Include="Content\css\AdminCSSLayout\skin-blue-light.min.css" />
     <Content Include="Content\css\AdminCSSLayout\_all-skins.min.css" />
+    <Content Include="Content\css\Home\style.css" />
+    <Content Include="Content\css\IndexPartialCSS.css" />
     <Content Include="Content\css\nguoidung-style.css" />
     <Content Include="Content\css\NguoiDungCSSLayout\bootstrap-responsive.min.css" />
     <Content Include="Content\css\NguoiDungCSSLayout\bootstrap.min.css" />
@@ -196,15 +200,19 @@
     <Content Include="Content\image\4dx1.jpg" />
     <Content Include="Content\image\banner-cgv-red-blank1.jpg" />
     <Content Include="Content\image\banner-quang-cao-cgv.jpg" />
+    <Content Include="Content\image\beauty.jpg" />
     <Content Include="Content\image\cgv.jpg" />
     <Content Include="Content\image\cgv1.jpg" />
     <Content Include="Content\image\dolby.png" />
     <Content Include="Content\image\go-premium-logo.png" />
     <Content Include="Content\image\imax.jpg" />
+    <Content Include="Content\image\likes.png" />
+    <Content Include="Content\image\link.png" />
     <Content Include="Content\image\logo.png" />
     <Content Include="Content\image\quangcao.jpg" />
     <Content Include="Content\image\sweetbox.jpg" />
     <Content Include="Content\image\user.png" />
+    <Content Include="Content\image\views.png" />
     <Content Include="Content\js\AdminJSLayout\app.min.js" />
     <Content Include="Content\js\AdminJSLayout\bootstrap-datepicker.js" />
     <Content Include="Content\js\AdminJSLayout\bootstrap.min.js" />
@@ -219,12 +227,15 @@
     <Content Include="Content\js\AdminJSLayout\jquery.slimscroll.min.js" />
     <Content Include="Content\js\AdminJSLayout\jquery.sparkline.min.js" />
     <Content Include="Content\js\AdminJSLayout\morris.min.js" />
+    <Content Include="Content\js\Home\jquery.min.js" />
     <Content Include="Content\js\jquery-1.9.1.min.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\modernizr-2.6.2-respond-1.1.0.min.js" />
+    <Content Include="Content\js\PopupModal.js" />
     <Content Include="Content\js\Slider\jquery.easing.1.3.js" />
     <Content Include="Content\js\Slider\jquery.eislideshow.js" />
     <Content Include="Content\js\Slider\tmp.js" />
+    <Content Include="Content\js\trangChuController.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -302,10 +313,16 @@
     <Content Include="Views\TrangChu\PhimDangChieu.cshtml" />
     <Content Include="Views\TrangChu\DatVePartial.cshtml" />
     <Content Include="Views\TrangChu\PhimSapChieuPartial.cshtml" />
+    <Content Include="Views\LoaiVe\IndexPartial.cshtml" />
+    <Content Include="Views\Home\TicketPrices.cshtml" />
+    <Content Include="Views\Home\Movies.cshtml" />
+    <Content Include="Views\Home\Showtimes.cshtml" />
+    <Content Include="Views\Layout\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\Sale.cshtml" />
+    <Content Include="Views\Home\ModalPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FileImage\" />
     <Folder Include="Views\Validation\" />
   </ItemGroup>
   <ItemGroup>

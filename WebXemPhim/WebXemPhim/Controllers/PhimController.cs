@@ -10,6 +10,7 @@ using WebXemPhim.DAL;
 using WebXemPhim.Models;
 using PagedList;
 using System.IO;
+using System.Drawing;
 
 namespace WebXemPhim.Controllers
 {
@@ -178,14 +179,16 @@ namespace WebXemPhim.Controllers
         // Trả về Poster của từng image
         [HttpGet]
         [AllowAnonymous]
-        public ActionResult ViewImage(int id)
+        public ActionResult ViewImage(int id, int width, int height)
         {
             var item = db.Phims.FirstOrDefault<Phim>(p => p.PhimID == id);
             if (item == null)
                 return null;
             byte[] buffer = item.Poster;
-            return File(buffer, "image/jpg", string.Format("{0}.jpg", id));
-        }
+            MemoryStream ms = new MemoryStream(buffer);
+            Image returnImage = Utils.resizeImage(Image.FromStream(ms),width, height);
+            return File(Utils.imageToByteArray(returnImage), "image/jpg", string.Format("{0}.jpg", id));
+         }
 
      
         protected override void Dispose(bool disposing)

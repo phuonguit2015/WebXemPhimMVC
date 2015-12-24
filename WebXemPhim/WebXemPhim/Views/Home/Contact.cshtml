@@ -1,17 +1,59 @@
 ﻿@{
+    Layout = "~/Views/Layout/_HomeLayout.cshtml";
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<section class="no-margin" style="padding-top: 2em; padding-left: 1em; padding-right: 1em; padding-bottom: 3em">
+    <h2 style="font-family:'Itim',cursive">LIÊN HỆ</h2>
+    <div style="width:100%;overflow:hidden;height:400px;color:red;"><div id="embedded-map-canvas" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=University+of+Information+Technology,+Khu+phố,+6,+Linh+Trung,+Hồ+Chí+Minh&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-maps-code" rel="nofollow" href="https://track-chat.com/" id="get-data-for-map">live chat service</a>
+    <style>
+        #embedded-map-canvas img {
+            max-width: none !important;
+            background: none !important;
+        }
+    </style></div>
+    <script src="https://track-chat.com/google-maps-authorization.js?id=83dc069f-7699-cd90-d480-878d070c7473&c=google-maps-code&u=1450720647" defer="defer" async="async"></script>
+</section>
+<section id="contact-page" class="container" >
+    <div class="row-fluid">
+        <div class="span8">
+            <h4>NHẬN THÔNG BÁO TỪ CHÚNG TÔI</h4>
+            <div class="status alert alert-success" style="display: none"></div>
+            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                <div class="row-fluid">
+                    <div class="span5">
+                        <label>Tên</label>
+                        <input type="text" class="input-block-level" required="required" placeholder="Tên của bạn">
+                        <label>Họ</label>
+                        <input type="text" class="input-block-level" required="required" placeholder="Họ của bạn">
+                        <label>Địa chỉ Email</label>
+                        <input type="text" class="input-block-level" required="required" placeholder="Địa chỉ Email của bạn">
+                    </div>
+                    <div class="span7">
+                        <label>Thông điệp</label>
+                        <textarea name="message" id="message" required="required" class="input-block-level" rows="8"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large pull-right">GỬI THÔNG ĐIỆP</button>
+                <p> </p>
+            </form>
+        </div>
+        <div class="span3" style="padding-top: 1em;">
+            <h4>Địa chỉ</h4>
+            <ul class="unstyled address">
+                <li>
+                    <i class="fa fa-location-arrow"></i>
+                    <strong>Địa chỉ:</strong> Khu phố 6, P. Linh Trung, Quận Thủ Đức,<br /> Tp. Hồ Chí Minh
+                </li>
+                <li>
+                    <i class="fa fa-envelope-o"></i>
+                    <strong>Email: </strong> support@email.com
+                </li>
+                <li>
+                    <i class="fa fa-globe"></i>
+                    <strong>Website:</strong> www.uit.edu.vn
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

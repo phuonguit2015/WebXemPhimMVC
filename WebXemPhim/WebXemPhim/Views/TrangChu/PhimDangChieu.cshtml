@@ -10,10 +10,10 @@
             <div class="movie">
                 <div class="featuredMovie" style="width: 30%">
                     <a href="#">
-                        <img src="~/Phim/ViewImage?id=@Model[0].PhimID" style="height:100%; width:100%">
+                        <img src="~/Phim/ViewImage?id=@Model[0].PhimID&width=200&height=300" style="height:100%; width:100%">
                     </a>
                     <div class="movie-info">  
-                        <a class="main-trailer" href="#"><i class="fa fa-play-circle"></i> Trailer</a>
+                        <a class="main-trailer" data-toggle="modal" data-target=".bootstrapmodal" href="@Model[0].TrailerURL"><i class="fa fa-play-circle"></i> Trailer</a>
                         <a class="main-cta" href="#">MUA VÉ</a>
                     </div>
                     <span class="publish-date-new">
@@ -25,7 +25,7 @@
                     <li>
                         <div class="container" style="width:100%; height: 100%;">
                             <a href="#">
-                                <img src="~/Phim/ViewImage?id=@Model[1].PhimID" height="230" width="160">
+                                <img src="~/Phim/ViewImage?id=@Model[1].PhimID&width=200&height=300" height="230" width="160">
                             </a>
                             <div class="movie-info">
                                 <a class="main-trailer" href="#">TRAILER</a>
@@ -40,7 +40,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <img src="~/Phim/ViewImage?id=@Model[2].PhimID" height="230" width="160">
+                            <img src="~/Phim/ViewImage?id=@Model[2].PhimID&width=200&height=300" height="230" width="160">
                         </a>
                         <div class="movie-info">
                             <a class="main-trailer" href="#">TRAILER</a>
@@ -53,7 +53,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <img src="~/Phim/ViewImage?id=@Model[3].PhimID" height="230" width="160">
+                            <img src="~/Phim/ViewImage?id=@Model[3].PhimID&width=200&height=300" height="230" width="160">
                         </a>
                         <div class="movie-info">
                             <a class="main-trailer" href="#">TRAILER</a>
@@ -66,7 +66,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <img src="~/Phim/ViewImage?id=@Model[4].PhimID" height="230" width="160">
+                            <img src="~/Phim/ViewImage?id=@Model[4].PhimID&width=200&height=300" height="230" width="160">
                         </a>
                         <div class="movie-info">
                             <a class="main-trailer" href="#">TRAILER</a>
@@ -79,7 +79,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <img src="~/Phim/ViewImage?id=@Model[5].PhimID" height="230" width="160">
+                            <img src="~/Phim/ViewImage?id=@Model[5].PhimID&width=200&height=300" height="230" width="160">
                         </a>
                         <div class="movie-info">
                             <a class="main-trailer" href="#">TRAILER</a>
@@ -92,7 +92,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <img src="~/Phim/ViewImage?id=@Model[6].PhimID" height="230" width="160">
+                            <img src="~/Phim/ViewImage?id=@Model[6].PhimID&width=200&height=300" height="230" width="160">
                         </a>
                         <div class="movie-info">
                             <a class="main-trailer" href="#">TRAILER</a>

@@ -1,0 +1,23 @@
+﻿@model List<WebXemPhim.Models.LoaiVe>
+
+
+<link href="~/Content/css/IndexPartialCSS.css" rel="stylesheet" />
+<div id="wrapper">
+    <table id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th><span>Loại Vé</span></th>
+                <th><span>Giá Vé</span></th>             
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.TenLoaiVe)</td>
+                    <td>@Html.DisplayFor(modelItem => item.GiaTriToString) <strong>VNĐ</strong></td>                   
+                </tr>
+            }          
+        </tbody>
+    </table>
+</div> 

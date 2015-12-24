@@ -52,6 +52,12 @@ namespace WebXemPhim.Controllers
             int pageNumber = (page ?? 1);
             return View(loaiVe.ToPagedList(pageNumber, pageSize));
         }
+
+        // GET: LoaiVe  Hiển thị thông tin loại vé cho người dùng xem
+        public PartialViewResult  IndexPartial()
+        {
+            return PartialView(db.LoaiVes.ToList());
+        }
         //public ActionResult Index()
         //{
         //    return View(db.LoaiVes.ToList());
