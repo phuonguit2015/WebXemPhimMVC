@@ -36,7 +36,7 @@ h2 {
 }
 .movie .featuredMovie {
     width: 100%;
-    height: 450px;
+    height: 350px;
     float: left;
     overflow: hidden;
     position: relative;
@@ -118,7 +118,7 @@ body a {
 }
 .movie .otherMovies {
     width: 500px;
-    height: 450px;
+    height: 350px;
     position: relative;
     list-style: none;
     margin: 0;
@@ -128,7 +128,7 @@ body a {
 }
 .movie .otherMovies li {
     width: 150px;   
-    height: 210px;
+    height: 160px;
     overflow: hidden;
     display: block;
     position: absolute;

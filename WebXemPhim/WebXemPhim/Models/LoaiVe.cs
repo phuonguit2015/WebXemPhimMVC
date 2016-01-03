@@ -22,6 +22,7 @@ namespace WebXemPhim.Models
         public decimal GiaTri { get; set; }
 
         public virtual ICollection<Ve> Ves { get; set; }
+        public virtual ICollection<LichChieu> LichChieus { get; set; }
 
         public string GiaTriToString
         {
@@ -30,5 +31,7 @@ namespace WebXemPhim.Models
                 return GiaTri.ToString("#,#", CultureInfo.InvariantCulture);
             }
         }
+
+
     }
 }

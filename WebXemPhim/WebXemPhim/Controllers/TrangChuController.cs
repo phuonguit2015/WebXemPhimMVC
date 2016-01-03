@@ -12,12 +12,15 @@ namespace WebXemPhim.Controllers
         private MovieDBContext db = new MovieDBContext();
 
         // GET: TrangChu
-        public ActionResult Index()
+
+        public ActionResult Index(string message = "")
         {
+            ViewData["Message"] = message;
             // Lấy 7 Phim trong CSDL
             var phimMoi = db.Phims.Take(7).ToList();
             return View(phimMoi);
         }
+
 
         public PartialViewResult PhimDangChieu()
         {
@@ -27,19 +30,19 @@ namespace WebXemPhim.Controllers
 
         public PartialViewResult DatVePartial()
         {
-        //    // Lấy danh sách phim đang bán vé - phim đang chiếu
-        //    var phim = db.Phims.Where(p => p.TrangThai == Models.TrangThaiPhim.Dang_Chieu);
-        //    List<SelectListItem> selectListItemPhims = new List<SelectListItem>();
-        //    foreach (var item in phim)
-        //    {
-        //        SelectListItem selectListItemPhim = new SelectListItem
-        //        {
-        //            Text = item.TenPhim,
-        //            Value = item.PhimID.ToString(),                   
-        //        };
-        //        selectListItemPhims.Add(selectListItemPhim);
-        //    }
-        //    ViewBag.Phim = selectListItemPhims;
+            //    // Lấy danh sách phim đang bán vé - phim đang chiếu
+            //    var phim = db.Phims.Where(p => p.TrangThai == Models.TrangThaiPhim.Dang_Chieu);
+            //    List<SelectListItem> selectListItemPhims = new List<SelectListItem>();
+            //    foreach (var item in phim)
+            //    {
+            //        SelectListItem selectListItemPhim = new SelectListItem
+            //        {
+            //            Text = item.TenPhim,
+            //            Value = item.PhimID.ToString(),                   
+            //        };
+            //        selectListItemPhims.Add(selectListItemPhim);
+            //    }
+            //    ViewBag.Phim = selectListItemPhims;
 
             return PartialView();
         }
@@ -83,7 +86,48 @@ namespace WebXemPhim.Controllers
                 status = true
             }, JsonRequestBehavior.AllowGet);
         }
+        // Lấy danh sách ngày chiếu theo phim
+        public JsonResult LoadNgayChieu(int Phim)
+        {
+            var lichChieus = db.LichChieux.Where(c => c.PhimID == Phim);
+            var list = new List<WebXemPhim.Models.ShortLichChieu>();
+            WebXemPhim.Models.ShortLichChieu _lichChieu = null;
+            foreach (var item in lichChieus)
+            {
+                _lichChieu = new Models.ShortLichChieu();
+                _lichChieu.LichChieuID = item.LichChieuID;
+                _lichChieu.NgayChieu = item.NgayChieu.ToShortDateString();
+                int index = list.FindIndex(i => i.NgayChieu == _lichChieu.NgayChieu);
+                if(index < 0)
+                {
+                    list.Add(_lichChieu);
+                }
 
+            }
+            return Json(new
+            {
+                data = list,
+                status = true
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+
+        public JsonResult GetNextDay(string dt)
+        {
+            var list = new List<String>();
+            
+            for(int i = 0; i < 7; i++)
+            {
+                DateTime d = DateTime.Parse(dt);
+                list.Add(d.AddDays(i).ToString("dd/MM/yyyy"));
+            }            
+
+            return Json(new
+            {
+                data = list,
+                status = true
+            }, JsonRequestBehavior.AllowGet);
+        }
         public PartialViewResult PhimSapChieuPartial()
         {
             var phimSapChieu = db.Phims.Take(7).ToList();

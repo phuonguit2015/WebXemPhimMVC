@@ -13,9 +13,9 @@
     <link href="~/Content/css/NguoiDungCSSLayout/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/NguoiDungCSSLayout/bootstrap-responsive.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">*@
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="~/Content/css/NguoiDungCSSLayout/main.css" rel="stylesheet" />
     <link href="~/Content/css/NguoiDungCSSLayout/sl-slide.css" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Patrick+Hand|Itim&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
@@ -193,9 +193,8 @@
                 <label class="checkbox">
                     <input type="checkbox"> Nhớ tài khoản
                 </label>
-                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                <a href='@Url.Action("KiemTraDangNhap", "NguoiDungs", new { taiKhoan = "aaa", matKhau = "222" }, Request.Url.Scheme)' class="btn btn-primary">Đăng Nhập</a>
             </form>
-            <a href="#">Quên mật khẩu?</a>
         </div>
         <!--/Modal Body-->
     </div>
@@ -208,7 +207,7 @@
     <script src="~/Content/js/Slider/tmp.js"></script>
     <script src="~/Content/js/trangChuController.js"></script>
     <script src="~/Content/js/PopupModal.js"></script>
-
+    <script src="~/Content/js/homeController.js"></script>   
     @if (IsSectionDefined("jsFooter"))
     {
         @RenderSection("jsFooter",required:false);

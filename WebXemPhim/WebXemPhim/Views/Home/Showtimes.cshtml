@@ -3,5 +3,47 @@
     ViewBag.Title = "ShowTimes";
 }
 
-<p>Lịch Chiếu Phim</p>
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1 style="font-family: 'Itim',cursive;">Lịch Chiếu Phim</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)">Trang Chủ</a> <span class="divider">/</span></li>
+                    <li class="active">Lịch Chiếu Phim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title -->
+
+
+<div class="container" style="margin-top: 3em;">   
+    <div class="row filter">
+        <div class="chon-phim">
+            @Html.DropDownList("PhimID", new SelectList(new string[] { }), new { @id = "listPhim" })
+        </div>
+        <div class="chon-ngay">
+            @Html.DropDownList("LichChieuID", new SelectList(new string[] { }), new { @id = "listLichChieu" })
+        </div>
+        <div class="dat-ve">            
+            <img src="~/Content/image/logo.png" />
+            <div class="titleGroup">
+                <span>Coffee Cinema</span>
+                <span><a href="#">Bán Vé Online</a></span>
+            </div>
+            <div class="img-tooltip">
+                <img style=" width: 75px;" src="~/Content/image/new.png" />
+            </div>
+            <p><i class="fa fa-hand-pointer-o"></i> Click vào 1 suất chiếu để đặt vé</p>
+        </div>
+    </div>
+    <div class="partialLichChieu">
+        @Html.Action("DanhSachLichChieuPartial", "Home", new { @PhimID = -1, @ngayChieu = "12/2/2015", @CoNgayChieu = false })
+    </div>
+</div>
+
 

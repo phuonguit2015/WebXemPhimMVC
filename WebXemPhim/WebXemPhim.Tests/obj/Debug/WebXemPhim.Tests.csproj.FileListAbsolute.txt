@@ -25,6 +25,7 @@ G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\System.Web.WebPages.R
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\WebXemPhim.dll
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\System.Web.Optimization.dll
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\EntityFramework.dll
+G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\PagedList.dll
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\WebXemPhim.pdb
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\Newtonsoft.Json.xml
@@ -36,8 +37,7 @@ G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\System.Web.WebPages.D
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\System.Web.Optimization.xml
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\EntityFramework.xml
+G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\PagedList.xml
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\obj\Debug\WebXemPhim.Tests.csprojResolveAssemblyReference.cache
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\obj\Debug\WebXemPhim.Tests.dll
 G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\obj\Debug\WebXemPhim.Tests.pdb
-G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\PagedList.dll
-G:\Git\WebXemPhimMVC\WebXemPhim\WebXemPhim.Tests\bin\Debug\PagedList.xml

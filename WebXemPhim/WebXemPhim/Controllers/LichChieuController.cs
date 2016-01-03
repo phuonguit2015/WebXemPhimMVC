@@ -8,6 +8,7 @@ using PagedList;
 using System.Web.Mvc;
 using WebXemPhim.DAL;
 using WebXemPhim.Models;
+using System.Globalization;
 
 namespace WebXemPhim.Controllers
 {
@@ -72,10 +73,94 @@ namespace WebXemPhim.Controllers
             return View(lichChieu);
         }
 
+        // GET LichChieu/LichChieuPhimTheoNgay
+        public PartialViewResult DetailsByDayPartial(string d, int? PhimID = -1)
+        {            
+            IQueryable<LichChieu> lichChieu;
+            DateTime dt = new DateTime();
+            if (d != null)
+                dt = DateTime.ParseExact(d,
+                                 "dd/MM/yyyy",
+                                CultureInfo.InvariantCulture);
+
+            if (PhimID == -1)
+            {
+                lichChieu = db.LichChieux.Include(l => l.Phim).Include(l => l.LoaiVe).Where(lc => lc.NgayChieu == dt);
+            }
+            else
+            {
+                lichChieu = db.LichChieux.Include(l => l.Phim).Include(l => l.LoaiVe).Where(lc => lc.PhimID == PhimID && lc.NgayChieu == dt);
+
+            }
+            List<LichChieu> list2D = new List<LichChieu>();
+            List<LichChieu> list3D = new List<LichChieu>();
+
+            foreach(var item in lichChieu)
+            {
+                if (item.LoaiVe.TenLoaiVe == "2D")
+                {
+                    list2D.Add(item);
+                }
+                else
+                    list3D.Add(item);
+            }
+            ViewBag.List2D = list2D;
+            ViewBag.List3D = list3D;
+            return PartialView();
+        }
+
+
+        // Lịch chiếu theo PhimID
+        public PartialViewResult LichChieuTheoPhim(int PhimID)
+        {
+            // Danh sách lịch chiếu của PhimID
+            var lichChieuTheoPhim = db.LichChieux.Include(lc=>lc.LoaiVe).Where(l => l.PhimID == PhimID).ToList();
+            // Danh sách ngày chiếu
+            var danhSachNgayChieu = new List<LichChieu>();
+            foreach(var item in lichChieuTheoPhim)
+            {
+                LichChieu temp = new LichChieu();
+                temp.NgayChieu = item.NgayChieu;
+                temp.LoaiVe = item.LoaiVe;
+                int index = danhSachNgayChieu.FindIndex(i => i.NgayChieu == temp.NgayChieu);
+                if (index < 0)
+                    danhSachNgayChieu.Add(temp);
+            }
+            // Danh sách ngày chiếu loại vé
+            var danhSachNgayChieuLV = new List<LichChieu>();
+            foreach (var item in lichChieuTheoPhim)
+            {
+                LichChieu temp = new LichChieu();
+                temp.NgayChieu = item.NgayChieu;
+                temp.LoaiVe = item.LoaiVe;
+                int index = danhSachNgayChieuLV.FindIndex(i => i.NgayChieu == temp.NgayChieu && i.LoaiVe == temp.LoaiVe);
+                if (index < 0)
+                    danhSachNgayChieuLV.Add(temp);
+            }
+
+            // Danh sách giờ chiếu
+            var danhSachGioChieu = new List<LichChieu>();
+            foreach (var item in lichChieuTheoPhim)
+            {
+                LichChieu temp = new LichChieu();
+                temp.NgayChieu = item.NgayChieu;
+                temp.GioChieu = item.GioChieu;
+                temp.LoaiVe = item.LoaiVe;
+                danhSachGioChieu.Add(temp);
+            }
+
+            ViewBag.NgayChieu = danhSachNgayChieu;
+            ViewBag.GioChieu = danhSachGioChieu;
+            ViewBag.LoaiVe = danhSachNgayChieuLV;
+            return PartialView();
+        }
+        
+
         // GET: LichChieu/Create
         public ActionResult Create()
         {
             ViewBag.PhimID = new SelectList(db.Phims, "PhimID", "TenPhim");
+            ViewBag.LoaiVeID = new SelectList(db.LoaiVes, "LoaiVeID", "TenLoaiVe");
             ViewBag.PhongChieuID = new SelectList(db.PhongChieux, "PhongChieuID", "TenPhongChieu");
             return View();
         }
@@ -85,7 +170,7 @@ namespace WebXemPhim.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LichChieuID,PhimID,PhongChieuID,NgayChieu,GioChieu")] LichChieu lichChieu)
+        public ActionResult Create([Bind(Include = "LichChieuID,PhimID,LoaiVeID,PhongChieuID,NgayChieu,GioChieu")] LichChieu lichChieu)
         {
             if (ModelState.IsValid)
             {
@@ -95,6 +180,7 @@ namespace WebXemPhim.Controllers
             }
 
             ViewBag.PhimID = new SelectList(db.Phims, "PhimID", "TenPhim", lichChieu.PhimID);
+            ViewBag.LoaiVeID = new SelectList(db.LoaiVes, "LoaiVeID", "TenLoaiVe", lichChieu.LoaiVeID);
             ViewBag.PhongChieuID = new SelectList(db.PhongChieux, "PhongChieuID", "TenPhongChieu", lichChieu.PhongChieuID);
             return View(lichChieu);
         }
@@ -112,6 +198,7 @@ namespace WebXemPhim.Controllers
                 return HttpNotFound();
             }
             ViewBag.PhimID = new SelectList(db.Phims, "PhimID", "TenPhim", lichChieu.PhimID);
+            ViewBag.LoaiVeID = new SelectList(db.LoaiVes, "LoaiVeID", "TenLoaiVe", lichChieu.LoaiVeID);
             ViewBag.PhongChieuID = new SelectList(db.PhongChieux, "PhongChieuID", "TenPhongChieu", lichChieu.PhongChieuID);
             return View(lichChieu);
         }
@@ -130,6 +217,7 @@ namespace WebXemPhim.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.PhimID = new SelectList(db.Phims, "PhimID", "TenPhim", lichChieu.PhimID);
+            ViewBag.LoaiVeID = new SelectList(db.LoaiVes, "LoaiVeID", "TenLoaiVe", lichChieu.LoaiVeID);
             ViewBag.PhongChieuID = new SelectList(db.PhongChieux, "PhongChieuID", "TenPhongChieu", lichChieu.PhongChieuID);
             return View(lichChieu);
         }

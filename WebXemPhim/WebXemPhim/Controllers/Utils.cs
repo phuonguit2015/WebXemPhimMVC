@@ -16,14 +16,15 @@ namespace WebXemPhim.Controllers
 
         public static Image resizeImage(Image img, int width, int height)
         {
-            Bitmap b = new Bitmap(width, height);
-            Graphics g = Graphics.FromImage((Image)b);
+            //Bitmap b = new Bitmap(width, height);
+            //Graphics g = Graphics.FromImage((Image)b);
 
-            g.InterpolationMode = InterpolationMode.Bicubic;    // Specify here
-            g.DrawImage(img, 0, 0, width, height);
-            g.Dispose();
+            //g.InterpolationMode = InterpolationMode.Bicubic;    // Specify here
+            //g.DrawImage(img, 0, 0, width, height);
+            //g.Dispose();
 
-            return (Image)b;
+            //return (Image)b;
+            return img.GetThumbnailImage(width, height, null, IntPtr.Zero);
         }
 
         public static byte[] imageToByteArray(System.Drawing.Image imageIn)

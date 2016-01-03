@@ -2,6 +2,77 @@
     Layout = "~/Views/Layout/_HomeLayout.cshtml";
     ViewBag.Title = "Sale";
 }
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1 style="font-family: 'Itim',cursive;">Ưu Đãi, Khuyến Mãi</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)">Trang Chủ</a> <span class="divider">/</span></li>
+                    <li class="active">Ưu Đãi, Khuyến Mãi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title -->
 
-<p>Khuyến mãi, ưu đãi.</p>
+<div class="container">
+        <section>
+            <div class="main">              
+                <ul class="KhuyenMai-List">
+                    <li>
+                        <a class="imgThumb" href="#">
+                            <img  src="~/Content/image/pic1.jpg" style="height: 200px"/>
+                        </a>
+                        <div class="KhuyenMai-ContInfo">
+                            <h4 class="title1">
+                                <a href="#">Enjoy Movie Countdown</a>
+                            </h4>
+                            <p>Cảm ơn các tín đồ điện ảnh đã cùng Enjoy Movie xây dựng nên cộng đồng điện ảnh cực chất suốt thời gian qua.</p>
+                            <div class="detail"><a href="#" class="btn btn-danger">Chi Tiết</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="imgThumb" href="#">
+                            <img src="~/Content/image/pic2.jpg" style="height: 200px" />
+                        </a>
+                        <div class="KhuyenMai-ContInfo">
+                            <h4 class="title1">
+                                <a href="#">[Enjoy Movie] Quẩy thả ga - Đừng ở nhà</a>
+                            </h4>
+                            <p>Bạn ngại phải ra đường vào dịp Giáng Sinh vì phải hít một mớ khói bụi độc hại, chỗ vui chơi thì đông nghẹt người, rạp xem phim thì không còn vé? Sao bạn không thử tham gia chương trình khuyến mãi hấp dẫn nhất năm của Enjoy Movie? </p>
+                            <div class="detail"><a href="#" class="btn btn-danger">Chi Tiết</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="imgThumb" href="#">
+                            <img src="~/Content/image/pic3.jpg" style="height: 200px" />
+                        </a>
+                        <div class="KhuyenMai-ContInfo">
+                            <h4 class="title1">
+                                <a href="#">Nhận ngay 10.000 vé xem phim miễn phí tại rạp BHD Star Mega Mall</a>
+                            </h4>
+                            <p>Nhân dịp khai trương cụm rạp mới tại trung tâm thương mại Mega Mall quận 2, Enjoy Movie phối hợp cùng với hệ thống BHD Star Cineplex để mang đến cho bạn cơ hội xem phim hấp dẫn và hoàn toàn miễn phí.</p>
+                            <div class="detail"><a href="#" class="btn btn-danger">Chi Tiết</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="imgThumb" href="#">
+                            <img src="~/Content/image/pic4.jpg" style="height: 200px" />
+                        </a>
+                        <div class="KhuyenMai-ContInfo">
+                            <h4 class="title1">
+                                <a href="#">[ENJOY CINEMA] Peanuts Combo</a>
+                            </h4>
+                            <p>Giá bán 129,000 đồng/combo bao gồm bắp nước và topper 01 trong 04 nhân vật hoạt hình của phim.</p>
+                            <div class="detail"><a href="#" class="btn btn-danger">Chi Tiết</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    </section>
+</div>
 

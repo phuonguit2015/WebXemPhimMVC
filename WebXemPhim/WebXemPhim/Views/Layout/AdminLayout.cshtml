@@ -9,7 +9,8 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">*@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -49,15 +50,14 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="~/Content/image/user.png" class="user-image" alt="User Image">
-                                <span class="hidden-xs" style="display: initial !important;">Alexander Pierce</span>
+                                <span class="hidden-xs" style="display: initial !important;">Admin</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
                                     <img src="~/Content/image/user.png" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Admin
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -107,7 +107,7 @@
                 <ul class="sidebar-menu">
                     <li class="header">ĐIỀU HƯỚNG</li>
                     <li class="treeview">
-                        <a href="#">
+                        <a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)">
                             <i class="fa fa-home"></i> <span>TRANG CHỦ</span>
                         </a>                       
                     </li>                   
@@ -145,6 +145,11 @@
                         <a href="@Url.Action("Index","DatVe",null, Request.Url.Scheme)">
                             <i class="fa fa-ticket"></i> <span>QUẢN LÝ VÉ</span>
                         </a>
+                    </li>     
+                    <li class="treeview">
+                        <a href="@Url.Action("Index","NguoiDungs",null, Request.Url.Scheme)">
+                            <i class="fa fa-users"></i> <span>QUẢN LÝ NGƯỜI DÙNG</span>
+                        </a>
                     </li>                    
                 </ul>
             </section>
@@ -181,5 +186,12 @@
     <script src="~/Content/js/AdminJSLayout/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/js/AdminJSLayout/demo.js"></script>
+    <link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#NgayChieu').datepicker();
+        });
+    </script>
 </body>
 </html>

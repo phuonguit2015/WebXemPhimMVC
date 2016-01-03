@@ -58,7 +58,7 @@
                 <div class="img-poster">
                     @if (Model.Poster != null)
                     {
-                        <img class="poster" src="~/Phim/ViewImage?id=@Model.PhimID&width=150&height=150" alt="picture" />
+                        <img class="poster" src="~/Phim/ViewImage?id=@Model.PhimID&width=200&height=400" alt="picture" />
                     }
                     else
                     {
@@ -96,7 +96,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.NgayChieu)
+                @Html.DisplayFor(model => model.NgayChieuToString)
             </dd>
 
         </dl>

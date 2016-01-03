@@ -16,5 +16,9 @@ namespace WebXemPhim.Models
 
         [DisplayName("Giờ Chiếu")]
         public string GioChieu { get; set; }
+
+        public string TenPhim { get; set; }
+
+        public int PhimID { get; set; }
     }
 }

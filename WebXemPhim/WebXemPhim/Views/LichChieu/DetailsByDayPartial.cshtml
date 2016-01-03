@@ -1,0 +1,35 @@
+﻿@if (ViewBag.List3D.Count == 0 && ViewBag.List2D.Count == 0)
+{
+     <div class="loai-phim">
+        <h3>Không có suất chiếu</h3>
+     </div>
+}
+@if (ViewBag.List2D.Count > 0)
+{
+    <div class="loai-phim">
+        <h4>2D</h4>
+        <div class="info-lich-chieu">
+            <ul>
+                @foreach (var i in ViewBag.List2D)
+                {
+                    <li><a href="#">@i.GioChieuToString</a></li>
+                }
+            </ul>
+        </div>
+    </div>    
+}
+@if (ViewBag.List3D.Count > 0)
+{
+    <div class="loai-phim">
+        <h4>3D</h4>
+        <div class="info-lich-chieu">
+            <ul>
+                @foreach (var i in ViewBag.List3D)
+                {                  
+                    <li><a href="#">@i.GioChieuToString</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,25 @@
+﻿@if (ViewBag.DanhSachPhim.Count == 0)
+{
+    <div class="row lich-chieu-phim">
+        <h3 style="color:red; font-family:'Segoe UI'">Thông tin lịch chiếu bạn tìm không tồn tại</h3>
+    </div>
+}
+else
+{
+    foreach (var item in ViewBag.DanhSachPhim)
+    {
+        <div class="row lich-chieu-phim">
+            <div class="tieu-de-phim">
+                <h3><a href="">@item.Phim.TenPhim</a></h3>
+            </div>
+            <div class="col-sm-3 hinh-anh">
+                <img src="~/Phim/ViewImage?id=@item.PhimID&width=150&height=150" />
+            </div>
+            <div class="col-sm-9 lich-chieu" id="@item.PhimID">
+                @Html.Action("LichChieuTheoPhim", "LichChieu", new { PhimID = item.PhimID})
+            </div>
+        </div>
+            <hr />
+
+    }
+}

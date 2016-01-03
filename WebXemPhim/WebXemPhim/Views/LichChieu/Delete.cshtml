@@ -27,6 +27,14 @@
             </dd>
 
             <dt>
+                @Html.DisplayNameFor(model => model.LoaiVe.TenLoaiVe)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LoaiVe.TenLoaiVe)
+            </dd>
+
+            <dt>
                 @Html.DisplayNameFor(model => model.PhongChieu.TenPhongChieu)
             </dt>
 
@@ -39,7 +47,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.NgayChieu)
+                @Html.DisplayFor(model => model.NgayChieuToString)
             </dd>
 
             <dt>

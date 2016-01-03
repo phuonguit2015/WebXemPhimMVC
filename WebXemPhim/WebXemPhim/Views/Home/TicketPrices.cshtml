@@ -3,6 +3,24 @@
     ViewBag.Title = "TicketPrices";
 }
 
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1 style="font-family: 'Itim',cursive;">Bảng Giá Vé</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)"">Trang Chủ</a> <span class="divider">/</span></li>
+                    <li class="active">Bảng Giá Vé</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title -->
+
+
 <div class="container">
     <h1 style="text-align: center">THÔNG TIN GIÁ VÉ</h1>
     @Html.Action("IndexPartial", "LoaiVe")

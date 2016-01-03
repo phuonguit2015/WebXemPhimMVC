@@ -51,12 +51,7 @@ namespace WebXemPhim.Controllers
             int pageNumber = (page ?? 1);
             return View(ves.ToPagedList(pageNumber, pageSize));
         }
-        //public ActionResult Index()
-        //{
-        //    var ves = db.Ves.Include(v => v.Ghe).Include(v => v.LichChieu).Include(v => v.LoaiVe);
-        //    return View(ves.ToList());
-        //}
-
+       
         // GET: DatVe/Details/5
         public ActionResult Details(int? id)
         {
@@ -100,7 +95,8 @@ namespace WebXemPhim.Controllers
             ViewBag.LoaiVeID = new SelectList(db.LoaiVes, "LoaiVeID", "TenLoaiVe", ve.LoaiVeID);
             return View(ve);
         }
-
+        
+        
         // GET: DatVe/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -172,5 +168,7 @@ namespace WebXemPhim.Controllers
             }
             base.Dispose(disposing);
         }
+
+        
     }
 }

@@ -9,7 +9,8 @@ namespace WebXemPhim.Models
     public enum TrangThaiThanhToan
     {        
         Chua_Thanh_Toan,
-        Da_Thanh_Toan
+        Da_Thanh_Toan, 
+        Da_Huy
     }
     public class Ve
     {
@@ -42,6 +43,10 @@ namespace WebXemPhim.Models
 
         [DisplayName("Tên Khách Hàng")]
         public string TenKhachHang { get; set; }
+        [DisplayName ("Thanh Toán")]
+        public decimal ThanhToan { get; set; }
+        public string ThanhTien { get; set; }
+
 
         public virtual Ghe Ghe { get; set; }
         public virtual LoaiVe LoaiVe { get; set; }

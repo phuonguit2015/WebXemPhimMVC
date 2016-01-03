@@ -1,0 +1,39 @@
+﻿@if (ViewBag.NgayChieu.Count > 0)
+{
+    <div class="container">
+        <div class="loai-phim">
+            @foreach (var item in ViewBag.NgayChieu)
+            {
+                <h4>@item.NgayChieuToString</h4>
+                foreach (var i in ViewBag.LoaiVe)
+                {
+                    if (i.NgayChieu == item.NgayChieu)
+                    {
+                        <div class="row">
+                            <h5>@i.LoaiVe.TenLoaiVe</h5>
+                            <div class="info-lich-chieu">
+                                <ul>
+                                    @foreach (var item2 in ViewBag.GioChieu)
+                                    {
+                                        if (item2.LoaiVe.TenLoaiVe == i.LoaiVe.TenLoaiVe && item2.NgayChieu == i.NgayChieu)
+                                        {
+                                            <li><a href="#">@item2.GioChieuToString</a></li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="loai-phim">
+            <h5>Không có suất chiếu</h5>
+        </div>
+   </div>
+}

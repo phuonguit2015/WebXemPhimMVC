@@ -18,11 +18,6 @@ namespace WebXemPhim.DAL
         public DbSet<LoaiPhim> LoaiPhims { get; set; }
         public DbSet<Phim> Phims { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
-
         public System.Data.Entity.DbSet<WebXemPhim.Models.Ghe> Ghes { get; set; }
 
         public System.Data.Entity.DbSet<WebXemPhim.Models.PhongChieu> PhongChieux { get; set; }
@@ -32,5 +27,18 @@ namespace WebXemPhim.DAL
         public System.Data.Entity.DbSet<WebXemPhim.Models.LichChieu> LichChieux { get; set; }
 
         public System.Data.Entity.DbSet<WebXemPhim.Models.Ve> Ves { get; set; }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Configure Code First to ignore PluralizingTableName convention 
+            // If you keep this convention then the generated tables will have pluralized names. 
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+        }
+
+        public System.Data.Entity.DbSet<WebXemPhim.Models.NguoiDung> NguoiDungs { get; set; }
     }
 }

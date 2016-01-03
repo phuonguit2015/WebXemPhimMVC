@@ -1,0 +1,63 @@
+﻿@model WebXemPhim.Models.Phim
+
+@{
+    ViewBag.Title = "ChiTietPhim";
+    Layout = "~/Views/Layout/_HomeLayout.cshtml";
+}
+
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1 style="font-family: 'Itim',cursive;">@Html.DisplayFor(model => model.TenPhim)</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)">Trang Chủ</a> <span class="divider">/</span></li>
+                    <li><a href="@Url.Action("Movies","Home",new { tieude= "TẤT CẢ PHIM" , trangthai= WebXemPhim.Models.TrangThaiPhim.Da_Chieu})">Phim</a> <span class="divider">/</span></li>
+                    <li class="active">Chi Tiết Phim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title -->  
+
+
+<section class="container" style="margin-top:3em">
+    <div class="col-sm-9 thong-tin-phim">
+        <div class="row">
+            <div class="banner-phim">
+                <img src="~/Phim/ViewImage?id=@Model.PhimID&width=300&height=400" alt="picture" />
+            </div>
+            <div class="info-phim">
+                <h3>@Html.DisplayFor(model => model.TenPhim)</h3>
+                <hr />
+                <p><strong>ĐẠO DIỄN:</strong>    @Html.DisplayFor(model => model.DaoDien)</p>
+                <p><strong>DIỄN VIÊN:</strong>   @Html.DisplayFor(model => model.DienVien)</p>
+                <p><strong>THỂ LOẠI:</strong>    @Html.DisplayFor(model => model.LoaiPhim.TenLoaiPhim)</p>
+                <p><strong>THỜI LƯỢNG:</strong>  @Html.DisplayFor(model => model.ThoiLuong)</p>
+                <p><strong>NGÀY CHIẾU:</strong>  @Html.DisplayFor(model => model.NgayChieuToString)</p>
+            </div>
+        </div>
+      
+        <div class="row noi-dung">
+            <h4 class="tieu-de-noi-dung">NỘI DUNG:</h4>
+            <span>
+                @Html.DisplayFor(model => model.NoiDung) 
+            </span>
+        </div>
+        
+        <div class="row ct-lich-chieu">
+            <h4>LỊCH CHIẾU:</h4>
+            @Html.Action("LichChieuTheoPhim", "LichChieu", new { @PhimID = Model.PhimID })
+
+        </div>
+    </div>
+    <div class="col-sm-3" >
+        <div class="row" style="background-image: url('../../Content/image/1.png'); min-height: 465px; background-repeat: no-repeat;background-position: center; margin-bottom: 2em"></div>
+        <div class="row" style="background-image: url('../../Content/image/2.png');min-height: 465px; background-repeat: no-repeat;background-position: center;"></div>
+    </div>
+
+
+</section>

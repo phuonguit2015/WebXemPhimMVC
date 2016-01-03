@@ -11,9 +11,11 @@ header.navbar .nav>li>a {
     font-family: 'Itim', cursive;
 }
 .span8 {
-    width: 70%;
+    width: 77%;
     padding: 10px;
     float:left;
+      margin-left: 0px !important;
+    padding: 0px !important;
 }
 
 .span4 {
@@ -21,9 +23,13 @@ header.navbar .nav>li>a {
     float:left;
     min-height: 450px;
     padding-top: 120px;
+      margin-left: 0px !important;
+    padding: 0px !important;
 }
 .right-collumn {
      min-height: 450px;
+     margin-top: 80px;
+
 }
 #bottom {
         font-size: small;
@@ -129,7 +135,63 @@ header.navbar .nav>li>a {
 
 }
 
-#dllPhim, #dllLichChieu {
+#dllPhim, .lichChieu1 {
     width: 100%;
     border:2px solid #9B59B6;
+}
+
+.blockTitle {
+  padding: 40px 0 10px;
+  height: 60px;
+  font-weight: normal;
+  width: 100%;
+  float: left;
+}
+.blockTitle a {
+  color: #464646;
+  font-weight: lighter;
+  font-size: 30px;
+  margin: 0 0 3px;
+  line-height: 30px;
+  display: inline-block;
+  width: 100%;
+}
+
+
+.blockList li {
+  width: 48%;
+  float: left;
+  margin-bottom: 40px;
+  position: relative;
+}
+.blockList li .imgThumb {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  float: left;
+  overflow: hidden;
+      padding-top: 10px;
+}
+.blockList li .title {
+  padding-bottom: 3px;
+  font-weight: lighter;
+  font-size: 18px;
+  text-align: justify;
+}
+.blockList li p {
+  line-height: 150%;
+  color: #333333;
+  text-align: justify;
+}
+.blockList li .blockContInfo {
+  margin-top: 6px;
+  max-height: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:12px;
+}
+.title1>a {
+    text-decoration: none;
+    color: #0088cc;
+    font-size: 18px;
 }

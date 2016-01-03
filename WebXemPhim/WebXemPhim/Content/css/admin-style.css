@@ -1,6 +1,13 @@
 ﻿body {
 }
 
+.container {
+    width: 100% !important;
+}
+.container>form {
+    text-align: -webkit-right;
+    padding-right: 20px;
+}
 .row {
     margin-left: 0px;
     margin-right: 0px;

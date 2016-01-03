@@ -11,6 +11,7 @@ using WebXemPhim.Models;
 using PagedList;
 using System.IO;
 using System.Drawing;
+using ImageResizer;
 
 namespace WebXemPhim.Controllers
 {
@@ -62,6 +63,20 @@ namespace WebXemPhim.Controllers
 
         // GET: Phim/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Phim phim = db.Phims.Find(id);
+            if (phim == null)
+            {
+                return HttpNotFound();
+            }
+            return View(phim);
+        }
+        // GET: Phim/Details/5
+        public ActionResult ChiTietPhim(int? id)
         {
             if (id == null)
             {
@@ -186,11 +201,17 @@ namespace WebXemPhim.Controllers
                 return null;
             byte[] buffer = item.Poster;
             MemoryStream ms = new MemoryStream(buffer);
-            Image returnImage = Utils.resizeImage(Image.FromStream(ms),width, height);
+          
+            
+           Image returnImage = Utils.resizeImage(Image.FromStream(ms),width, height);
+
+
             return File(Utils.imageToByteArray(returnImage), "image/jpg", string.Format("{0}.jpg", id));
          }
 
-     
+
+        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

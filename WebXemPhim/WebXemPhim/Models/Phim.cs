@@ -48,6 +48,7 @@ namespace WebXemPhim.Models
         [DisplayName("Ngày Chiếu")]
         public DateTime NgayChieu { get; set; }
 
+      
         [DisplayName("Loại Phim")]
         public int LoaiPhimID { get; set; }
 
@@ -55,6 +56,13 @@ namespace WebXemPhim.Models
         public virtual ICollection<LichChieu> LichChieus { get; set; }
         public virtual ICollection<Ve> Ves { get; set; }
         //public List<HttpPostedFileBase> Files { get; set; }
+        public string NgayChieuToString
+        {
+            get
+            {
+                return NgayChieu.ToString("dd/MM/yyyy");
+            }
+        }
 
     }
 }

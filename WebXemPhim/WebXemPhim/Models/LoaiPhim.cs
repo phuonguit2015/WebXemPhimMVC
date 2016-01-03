@@ -17,7 +17,7 @@ namespace WebXemPhim.Models
         [Required(ErrorMessage ="Bạn chưa nhập tên loại phim.")]
         [StringLength(200,ErrorMessage ="Số ký tự nhập tối đa là 200.")]
         [DisplayName ("Loại Phim")]
-        [Index(IsUnique = true)]
+        //[Index(IsUnique = true)]
         public string TenLoaiPhim { get; set; }
 
         public virtual ICollection<Phim> Phims { get; set; }

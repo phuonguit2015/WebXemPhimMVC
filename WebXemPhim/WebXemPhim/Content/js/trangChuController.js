@@ -23,7 +23,7 @@
             dataType: "json",
             success: function (response) {
                 if (response.status == true) {
-                    var html = '<option value="">--Chọn phim--</option>';
+                    var html = '<option value="">CHỌN PHIM</option>';
                     var data = response.data;
                     $.each(data, function (i, item) {
                         html += '<option value="' + item.PhimID + '">' + item.TenPhim + '</option>'
@@ -41,7 +41,7 @@
             dataType: "json",
             success: function (response) {
                 if (response.status == true) {
-                    var html = '<option value="">--Chọn Lich Chieu--</option>';
+                    var html = '<option value="">CHỌN GIỜ CHIẾU</option>';
                     var data = response.data;
                     $.each(data, function (i, item) {
                         html += '<option value="' + item.LichChieuID + '">' + item.GioChieu + '</option>'

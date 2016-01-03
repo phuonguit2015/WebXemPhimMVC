@@ -27,6 +27,9 @@
                             @Html.DisplayNameFor(model => model.First().Phim.TenPhim)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.First().LoaiVe.TenLoaiVe)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.First().PhongChieu.TenPhongChieu)
                         </th>
                         <th>
@@ -44,6 +47,9 @@
                         <tr>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Phim.TenPhim)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoaiVe.TenLoaiVe)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.PhongChieu.TenPhongChieu)

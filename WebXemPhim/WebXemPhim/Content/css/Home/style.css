@@ -1,4 +1,10 @@
-﻿/*media all*/
+﻿.title .container .row-fluid .span6>h1{
+    padding-left: 10px;
+}
+
+
+
+/*media all*/
 .main {
     font-family: 'Segoe UI';
    }
@@ -173,4 +179,256 @@ ul {
     background-color: #9B59B6;
     font-weight: 400;
 }
+/*Lịch Chiếu*/
+.col-sm-9 {
+    width: 75%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-sm-3 {
+    width: 25%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
 
+.filter {
+    padding-left: 1em; 
+    width: 100%;
+    padding-bottom: 2em;
+    margin-left:0px;
+}
+
+.chon-phim, .chon-ngay {
+    width: 20%;   
+    min-height: 80px;
+    float:left;
+    margin-right: 2%;
+    border-radius: 4px;
+}
+.dat-ve{
+    width: 55%;
+    min-height: 80px;
+    border: 2px solid #eee;
+    float: left;
+    background-color: #ebebeb;
+}
+
+.dat-ve>img{
+    padding:10px;
+    display:block;
+    float:left;
+    width:20%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.dat-ve>p{
+    width:38%;
+    float:left;
+    padding-top: 20px;
+    color: #f79320;
+    font-size: 14px;
+}
+.img-tooltip{
+    float:left;
+    width: 17%;
+}
+.titleGroup{ 
+    float:left;
+    width: 25%;
+    padding-top: 10px;
+}
+.titleGroup>span{
+    font-size:18px;
+    display: block;
+    margin-bottom: 5px;
+}
+.titleGroup>span>a{
+        font-size:12px;
+        color: #fff;
+        background-color:#64bd60;
+        border-radius: 3px;
+        padding: 4px;
+}
+
+
+.lich-chieu-phim {
+    padding-bottom: 2em;
+    padding-left: 15px;
+    margin-left:0px;
+
+}
+
+.tieu-de-phim>h3>a {
+    font-family: 'Itim', cursive;
+    color: #000000;
+}
+.tieu-de-phim>h3>a:hover {   
+    color: #f89406; 
+}
+.loai-phim>h4{
+    color: #cccccc;
+    font-family: 'Itim', cursive;
+}
+.hinh-anh{
+    padding-top: .5em;   
+}
+.loai-phim {
+   float: left;
+}
+.info-lich-chieu {
+    float: left;
+}
+.info-lich-chieu>ul>li {
+    border: 1px solid #64bd60; 
+    border-radius: 4px;
+    width: 70px;
+    float: left;
+    padding: 3px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: 5px;
+ }
+.info-lich-chieu>ul>li:hover{
+    background-color: #f79320; 
+}
+.info-lich-chieu>ul>li>a{
+    color: #64bd60;
+    font-weight: 700;
+}
+#listPhim, #listLichChieu {
+    width: 100%;
+    height: 80px;
+}
+/*/Lịch chiếu*/
+
+/*CHI TIẾT PHIM*/
+.row {
+    margin-left:0px;
+}
+.banner-phim {
+    width: 40%;
+    min-height: 400px;
+    float: left;
+    margin-right:5%;
+}
+.banner-phim>img {
+    width: 100%;
+    height: 400px;   
+}
+
+.info-phim{
+    width: 55%;
+    float: left;
+}
+.info-phim>h3 {
+    font-family: 'Itim',cursive;
+    color: #111111;
+    font-size: xx-large;
+}
+
+.info-phim>p {
+    font-size: medium;
+}
+
+.noi-dung {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.noi-dung .tieu-de-noi-dung, .ct-lich-chieu>h4 {
+    font-family: 'Itim',cursive;
+    color: #fff;
+    display: block;
+    font-size: 21px;
+    padding: 10px 13px 13px;
+    margin: 0 0 7px;
+    border: 0px;
+    background: #089de3;
+}
+.noi-dung>span {
+    font-size: medium;
+    text-align:justify;
+    color: #333;
+}
+
+
+/*/CHI TIẾT PHIM*/
+
+/*ĐẶT VÉ*/
+
+.form-group {   
+    margin: 20px;
+    border: 1px solid #eee;
+    padding: 2em;
+    border-radius: 4px;
+}
+.form-group > input {
+   width: 100%;
+}
+    .form-group > label {
+        color: #f89406;
+    }
+
+    .btnDatVe {
+        width: 20%;
+        height: 50px;
+        font-family: 'Itim', cursive;
+        font-size: x-large;
+        border-radius: 3px;
+    }
+.thong-tin-phim>select {
+    width: 100%;
+}
+/*/ĐẶT VÉ*/
+
+/*KHUYẾN MÃI*/
+
+.KhuyenMai-List li {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-left:1em;
+  margin-top:3em;
+}
+.imgThumb {
+  text-decoration: none;
+  color: #464646;
+  width: 20%;
+  height: 200px;
+  padding-top: 10px;
+  float: left;
+}
+
+.imgThumb:hover{
+	background-size:110% auto;
+}
+.KhuyenMai-ContInfo {
+  margin-top: 5px;
+  max-height: 87px;
+  font-size:14px;
+}
+.title1 {
+  padding-bottom: 1em;
+  font-weight: lighter;
+  font-size: 18px;
+  text-align: justify;
+}
+.KhuyenMai-List li p {
+  line-height: 150%;
+  color: #989898;
+  text-align: justify;
+}
+.detail{
+	background:#999;
+	float:left;
+	margin-top:1em;
+	text-align:center;
+	padding:0px;
+	line-height:30px;
+}
+
+
+/*/KHUYẾN MÃI*/

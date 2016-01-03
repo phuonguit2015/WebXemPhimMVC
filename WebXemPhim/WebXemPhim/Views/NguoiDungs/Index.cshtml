@@ -1,0 +1,60 @@
+﻿@model PagedList.IPagedList<WebXemPhim.Models.NguoiDung>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/css/admin-style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>DANH SÁCH NGƯỜI DÙNG<span>@Html.ActionLink("Thêm Mới", "Create", "", new { @class = "btn-warning btn-create-title" })</span>  </h2>
+    @using (Html.BeginForm("Index", "NguoiDungs", FormMethod.Get))
+    {
+        <div class="col-md-4 input-group input-group-sm search-frm">
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <input type="submit" value="Tìm Kiếm" class="btn btn-info btn-flat" />
+            </span>
+        </div>
+    }
+    <hr />
+    <div class="table-content">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.ActionLink("Tên Người Dùng", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().TaiKhoan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().MatKhau)
+                </th>
+                <th>HÀNH ĐỘNG</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNguoiDung)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TaiKhoan)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatKhau)
+                    </td>
+                    <td>
+                        <i class="fa fa-pencil"></i> @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.NguoiDungID }) |
+                        <i class="fa fa-trash-o"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.NguoiDungID }) |
+                        <i class="fa fa-info"></i> @Html.ActionLink("Chi Tiết", "Details", new { id = item.NguoiDungID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -3,7 +3,24 @@
     Layout = "~/Views/Layout/_HomeLayout.cshtml";    
 }
 
-<div class="main">
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1 style="font-family: 'Itim',cursive;">Danh Mục Phim</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("Index","TrangChu",null, Request.Url.Scheme)">Trang Chủ</a> <span class="divider">/</span></li>
+                    <li class="active">Phim</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title --> 
+
+<div class="main container">
         <div class="video-content">
             <div class="right-content">
                 <div class="right-content-heading">
@@ -27,7 +44,7 @@
                     {
                     <!--Video-->
                         <div class="content-grid">
-                            <a class="hinh play-icon popup-with-zoom-anim" id="hinh-phim" href="@p.TrailerURL" data-toggle="modal" data-target=".bootstrapmodal">
+                            <a class="hinh play-icon popup-with-zoom-anim" id="hinh-phim" href="@Url.Action("ChiTietPhim","Phim",new { id = p.PhimID })">
                                 <img src="~/Phim/ViewImage?id=@p.PhimID&width=260&height=260" />
                             </a>
                             <h3>
